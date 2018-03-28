@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/WildCodeSchool/reims-0218-mariokartcontest/issues"
   },
-  "homepage": "https://github.com/WildCodeSchool/reims-0218-mariokartcontest#readme"
+  "homepage": "https://github.com/WildCodeSchool/reims-0218-mariokartcontest#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
