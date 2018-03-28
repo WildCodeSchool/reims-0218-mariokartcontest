@@ -1,7 +1,6 @@
 # reims-0218-mariokartcontest
-## Equipe de dévelloppement
-* Anahita VAHDANI
+## Developpement team
+* Anahita VAHDANI is the scrum master during the first sprint
 * Dorian MASSOT
 * Khalid EL IDRISSI
 * Anthony FISCHER
-
