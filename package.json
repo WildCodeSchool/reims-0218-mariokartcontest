@@ -1,0 +1,19 @@
+{
+  "name": "reims-0218-mariokartcontest",
+  "version": "1.0.0",
+  "description": "* Anahita Vahdani",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WildCodeSchool/reims-0218-mariokartcontest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WildCodeSchool/reims-0218-mariokartcontest/issues"
+  },
+  "homepage": "https://github.com/WildCodeSchool/reims-0218-mariokartcontest#readme"
+}
