@@ -5,7 +5,7 @@ app.use(express.static('public'))
 
 const html = `
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +16,8 @@ const html = `
   <body>
     <div id="main">
     </div>
-    <script src="app.js"></script>
+  <script src="page.js"></script>
+  <script src="app.js"></script>
   </body>
 </html>`
 
