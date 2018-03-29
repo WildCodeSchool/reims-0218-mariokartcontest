@@ -15,6 +15,7 @@ const html = `
   <body>
     <div id="main">
     </div>
+    <script src="app.js"></script>
   </body>
 </html>`
 
