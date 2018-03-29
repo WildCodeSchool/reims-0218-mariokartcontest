@@ -4,9 +4,14 @@ const render = html => {
   mainDiv.innerHTML = html
 }
 
-const makeCard = member => {
-  console.log(member)
-}
+const makeCard = item => `
+  <div class="col-md-4">
+    <div class="card mb-4 box-shadow">
+      <div class="card-body">
+        <p class="card-text" style="height: 80px">${item.name}</p>
+      </div>
+    </div>
+  </div>`
 
 const controllers = {
   '/': () => 
@@ -21,6 +26,7 @@ const controllers = {
           <p><a class="btn btn-primary btn-lg" href="/about" role="button">Learn more »</a></p>
           <p><a class="btn btn-success btn-lg" href="/users/new" role="button">Add a member »</a></p>
         </div>
+          <div class="row">${album}</div>
       </div>`)
     ),
     '*': () => render('<h1>Not Found</h1>'),
