@@ -18,6 +18,33 @@ const html = `
   </body>
 </html>`
 
+app.get('/members', (req, res) => {
+  const members = [
+    {
+      name : "Ana",
+      nickname : "Ere",
+      preferredCharacter : "Yoshi"
+    },
+    {
+      name : "Dorian",
+      nickname : "Cynnah",
+      preferredCharacter : "Toad"
+    },
+    {
+      name : "Khalid",
+      nickname : "Ere",
+      preferredCharacter : "Yoshi"
+    },
+    {
+      name : "Anthony",
+      nickname : "Elmoro",
+      preferredCharacter : "Luigi"
+    }
+  
+  ]
+  res.json(members)
+})
+
 app.get('*', (req, res) => {
   res.send(html)
   res.end()
