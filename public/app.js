@@ -37,6 +37,7 @@ const controllers = {
         <div id="alert-box" class="hidden">
   
         </div>
+        <h2>Inscription pour le tournoi !</h2>
         <form id="add-member">
           <div class="form-group">
             <label for="inputFirstName">Prénom</label>
@@ -63,7 +64,7 @@ const controllers = {
             <label for="inputPassword">Mot de passe</label>
             <input name="motDePasse" type="password" class="form-control" id="inputPassword" placeholder="Saisissez votre mot de passe">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">S'enregistrer</button>
         </form>
       </div>`
     )
