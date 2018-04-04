@@ -16,8 +16,8 @@ const html = `
   <body>
     <div id="main">
     </div>
-  <script src="page.js"></script>
-  <script src="app.js"></script>
+  <script src="/page.js"></script>
+  <script src="/app.js"></script>
   </body>
 </html>`
 
@@ -43,11 +43,7 @@ app.get('/members', (req, res) => {
       nickname : "Elmoro",
       preferredCharacter : "Luigi"
     }
-	{
-      name : "celine",
-      nickname : "Elmora",
-      preferredCharacter : "pizza ananas"
-    }
+	
   
   ]
   res.json(members)
