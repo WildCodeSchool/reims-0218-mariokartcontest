@@ -29,68 +29,19 @@ const controllers = {
           <div class="row">${album}</div>
       </div>`)
     ),
-    
-    '/members/new': () => {
-      //construit le formulaire
-      render(
-      `<div class="container">
-        <div id="alert-box" class="hidden">
-  
-        </div>
-        <form id="add-member">
-          <div class="form-group">
-            <label for="inputFirstName">First name</label>
-            <input name="firstName" type="text" class="form-control" id="inputFirstName" placeholder="Enter first name">
-          </div>
-          <div class="form-group">
-            <label for="inputGame">Last name</label>
-            <input name="game" type="text" class="form-control" id="inputGame" placeholder="Enter last name">
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>`
-    )
-      //js du formulaire
-      const form = document.getElementById('add-member')
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        const data = serializeForm(form)
-        fetch('/members', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        })
-        .then(res => res.json())
-        .then(member => {
-          const alertBox = document.getElementById('alert-box')
-          alertBox.className = 'alert alert-success'
-          alertBox.innerHTML = `Successfully created member ${wilder.firstName} (${wilder.id})`
-        })
-      })
-    },
 
     '*': () => render('<h1>Not Found</h1>'),
 }
 
-
-
-
-
-const route = pathname => {
-}
-
-(() => {
-
-  ['/',
-   '/members',
-   '/members/new',
-   '*',
-
-  ].forEach(
+const routing = () => {
+  const routes = [
+    '/',  
+    '*'
+  ]
+  routes.forEach(
     path => page(path, controllers[path])
   )
   page()
-})()
+}
+//appel cette fonction pour gérer les routes
+routing()
