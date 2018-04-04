@@ -26,25 +26,31 @@ app.get('/members', (req, res) => {
     {
       name : "Ana",
       nickname : "Ere",
-      preferredCharacter : "Yoshi"
+      //preferredCharacter : "Yoshi",
+      email: "anahita.vahdani@neuf.fr",
+      password:"motdepasse"
     },
     {
       name : "Dorian",
       nickname : "Cynnah",
-      preferredCharacter : "Toad"
+      //preferredCharacter : "Toad"
+      email: "anahita.vahdani@neuf.fr",
+      password:"motdepasse"
     },
     {
       name : "Khalid",
       nickname : "Ere",
-      preferredCharacter : "Yoshi"
+      email: "anahita.vahdani@neuf.fr",
+     // preferredCharacter : "Yoshi"
+     password:"motdepasse"
     },
     {
       name : "Anthony",
       nickname : "Elmoro",
-      preferredCharacter : "Luigi"
-    }
-	
-  
+      email: "anahita.vahdani@neuf.fr",
+     // preferredCharacter : "Luigi"
+     password:"motdepasse"
+    } 
   ]
   res.json(members)
 })

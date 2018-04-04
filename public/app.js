@@ -39,12 +39,29 @@ const controllers = {
         </div>
         <form id="add-member">
           <div class="form-group">
-            <label for="inputFirstName">First name</label>
-            <input name="firstName" type="text" class="form-control" id="inputFirstName" placeholder="Enter first name">
+            <label for="inputFirstName">Prénom</label>
+            <input name="firstName" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prénom">
           </div>
           <div class="form-group">
-            <label for="inputGame">Last name</label>
-            <input name="game" type="text" class="form-control" id="inputGame" placeholder="Enter last name">
+            <label for="inputNickname">Pseudo</label>
+            <input name="nickname" type="text" class="form-control" id="inputNickname" placeholder="Entrez votre pseudo">
+          </div>
+            <p>Choisissez votre équipe</br></p>
+           <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              <label class="form-check-label" for="inlineRadio1">TEAM WILD</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+              <label class="form-check-label" for="inlineRadio2">TEAM CAPSULE</label>
+           </div>
+          <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input name="Email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Mot de passe</label>
+            <input name="motDePasse" type="password" class="form-control" id="inputPassword" placeholder="Saisissez votre mot de passe">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -76,8 +93,6 @@ const controllers = {
 
     '*': () => render('<h1>Not Found</h1>'),
 }
-
-
 
 const routing = () => {
   const routes = [
