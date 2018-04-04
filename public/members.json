@@ -1,0 +1,26 @@
+[
+{
+    "name" : "Ana",
+    "nickname" : "Ere",
+    "email": "anahita.vahdani@neuf.fr",
+    "password":"motdepasse"
+  },
+  {
+    "name" : "Dorian",
+    "nickname" : "Cynnah",
+    "email": "anahita.vahdani@neuf.fr",
+    "password":"motdepasse"
+  },
+  {
+    "name" : "Khalid",
+    "nickname" : "Ere",
+    "email": "anahita.vahdani@neuf.fr",
+   "password":"motdepasse"
+  },
+  {
+    "name" : "Anthony",
+    "nickname" : "Elmoro",
+    "email": "anahita.vahdani@neuf.fr",
+   "password":"motdepasse"
+  } 
+]

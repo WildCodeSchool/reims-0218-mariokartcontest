@@ -13,6 +13,16 @@ const makeCard = item => `
     </div>
   </div>`
 
+
+const serializeForm = form => {
+  const data = {}
+  const elements = form.getElementsByClassName('form-control')
+  for(el of elements) {
+    data[el.name] = el.value
+  }
+  return data
+}
+
 const controllers = {
   '/': () => 
     fetch('/members')
@@ -49,11 +59,11 @@ const controllers = {
           </div>
             <p>Choisissez votre équipe</br></p>
            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              <input class="form-check-input form-control"  type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
               <label class="form-check-label" for="inlineRadio1">TEAM WILD</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+              <input class="form-check-input form-control" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
               <label class="form-check-label" for="inlineRadio2">TEAM CAPSULE</label>
            </div>
           <div class="form-group">
@@ -83,10 +93,10 @@ const controllers = {
         })//appel cette fonction pour gérer les routes
         routing()
         .then(res => res.json())
-        .then(member => {
+        .then(members => {
           const alertBox = document.getElementById('alert-box')
           alertBox.className = 'alert alert-success'
-          alertBox.innerHTML = `Successfully created member ${members.firstName} (${members.id})`
+          alertBox.innerHTML = `Successfully created member ${members.name}`
         })
       })
     },
