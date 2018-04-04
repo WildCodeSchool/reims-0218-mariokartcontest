@@ -91,7 +91,6 @@ const controllers = {
           },
           body: JSON.stringify(data)
         })//appel cette fonction pour gérer les routes
-        routing()
         .then(res => res.json())
         .then(members => {
           const alertBox = document.getElementById('alert-box')
