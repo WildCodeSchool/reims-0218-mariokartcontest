@@ -7,6 +7,7 @@ const render = html => {
 const makeCard = item => `
   <div class="col-md-4">
     <div class="card mb-4 box-shadow">
+    <img class="card-img-top" src="${item.image}" alt="Thumbnail [100%x225]" />
       <div class="card-body">
         <p class="card-text" style="height: 80px">${item.name}</p>
       </div>
@@ -50,8 +51,8 @@ const controllers = {
         <h2>Inscription pour le tournoi !</h2>
         <form id="add-member">
           <div class="form-group">
-            <label for="inputFirstName">Prénom</label>
-            <input name="firstName" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prénom">
+            <label for="inputName">Prénom</label>
+            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prénom">
           </div>
           <div class="form-group">
             <label for="inputNickname">Pseudo</label>
@@ -66,9 +67,13 @@ const controllers = {
               <input class="form-check-input form-control" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
               <label class="form-check-label" for="inlineRadio2">TEAM CAPSULE</label>
            </div>
+           <div class="form-group">
+           <label for="inputImageUrl">Image URL</label>
+           <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
+         </div> 
           <div class="form-group">
             <label for="inputEmail">Email</label>
-            <input name="Email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
+            <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
           </div>
           <div class="form-group">
             <label for="inputPassword">Mot de passe</label>

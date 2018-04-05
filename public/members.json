@@ -3,24 +3,28 @@
     "name" : "Ana",
     "nickname" : "Ere",
     "email": "anahita.vahdani@neuf.fr",
-    "password":"motdepasse"
+    "password":"motdepasse",
+    "image": "https://via.placeholder.com/320x240/?text=Erenude"
   },
   {
     "name" : "Dorian",
     "nickname" : "Cynnah",
     "email": "anahita.vahdani@neuf.fr",
-    "password":"motdepasse"
+    "password":"motdepasse",
+    "image": "https://via.placeholder.com/320x240/?text=Cynnah"
   },
   {
     "name" : "Khalid",
-    "nickname" : "Ere",
+    "nickname" : "Marco",
     "email": "anahita.vahdani@neuf.fr",
-   "password":"motdepasse"
+    "password":"motdepasse",
+    "image": "https://via.placeholder.com/320x240/?text=Marco"
   },
   {
     "name" : "Anthony",
     "nickname" : "Elmoro",
     "email": "anahita.vahdani@neuf.fr",
-   "password":"motdepasse"
+    "password":"motdepasse",
+    "image": "https://via.placeholder.com/320x240/?text=Elmoro"
   } 
 ]

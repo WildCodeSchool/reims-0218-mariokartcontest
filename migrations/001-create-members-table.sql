@@ -4,7 +4,8 @@ CREATE TABLE members (
   name VARCHAR(50),
   nickname VARCHAR(60),
   email TEXT,
-  password VARCHAR(60)
+  password VARCHAR(60),
+  image VARCHAR(255)
 );
 
 -- Down
