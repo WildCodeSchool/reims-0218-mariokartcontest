@@ -50,8 +50,8 @@ const controllers = {
         <h2>Inscription pour le tournoi !</h2>
         <form id="add-member">
           <div class="form-group">
-            <label for="inputFirstName">Prénom</label>
-            <input name="firstName" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prénom">
+            <label for="inputName">Prénom</label>
+            <input name="name" type="text" class="form-control" id="inputName" placeholder="Entrez votre prénom">
           </div>
           <div class="form-group">
             <label for="inputNickname">Pseudo</label>
@@ -68,7 +68,7 @@ const controllers = {
            </div>
           <div class="form-group">
             <label for="inputEmail">Email</label>
-            <input name="Email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
+            <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
           </div>
           <div class="form-group">
             <label for="inputPassword">Mot de passe</label>
