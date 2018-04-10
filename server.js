@@ -10,8 +10,8 @@ app.use(express.static('public'))
 app.use(bodyParser.json())
 
 const insertMember = m => {
-  const { name, nickname, email, password } = m
-  return db.get('INSERT INTO members(name, nickname, email, password) VALUES(?, ?, ?, ?)', name, nickname, email, password)
+  const { image, name, nickname, email, password, } = m
+  return db.get('INSERT INTO members(image, name, nickname, email, password) VALUES(?, ?, ?, ?, ?)', image, name, nickname, email, password)
   .then(() => db.get('SELECT last_insert_rowid() as id'))
   .then(({ id }) => db.get('SELECT * from members WHERE id = ?', id))
 }
