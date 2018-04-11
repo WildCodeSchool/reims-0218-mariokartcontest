@@ -120,11 +120,10 @@ app.post('/members', (req, res) => {
 app.get('/courses', (req, res) => {
   const course = [
     {
-
       date: "18h00",
         
-        Players: [
-          {
+        players: [
+            {
               name : "Anahita",
               nickname : "Erenude",
             },
@@ -144,7 +143,7 @@ app.get('/courses', (req, res) => {
 
       date: "19h00",
 
-        Players: [
+        players: [
           {
             name : "Anahita",
             nickname : "Erenude",
