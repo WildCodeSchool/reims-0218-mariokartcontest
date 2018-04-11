@@ -118,8 +118,54 @@ app.post('/members', (req, res) => {
 })
 
 app.get('/courses', (req, res) => {
-  const course = []
-})
+  const course = [
+    {
+
+      date: "18h00",
+        
+        Players: [
+          {
+              name : "Anahita",
+              nickname : "Erenude",
+            },
+            {
+              name : "Dorian",
+              nickname : "Cynnah",
+            },
+            {
+              name : "Khalid",
+              nickname : "Marco",
+            },
+            {
+              name : "Anthony",
+              nickname : "Elmoro"
+            } 
+        ],
+
+      date: "19h00",
+
+        Players: [
+          {
+            name : "Anahita",
+            nickname : "Erenude",
+          },
+          {
+            name : "Dorian",
+            nickname : "Cynnah",
+          },
+          {
+            name : "Khalid",
+            nickname : "Marco",
+          },
+          {
+            name : "Anthony",
+            nickname : "Elmoro"
+          }
+        ]
+    }]
+
+  res.json(course)  
+}),
 
 //READ
 app.get('*', (req, res) => {
