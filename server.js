@@ -3,6 +3,7 @@ const express = require('express')
 const Promise = require('bluebird')
 const bodyParser = require('body-parser')
 const usersSeed = require('./public/members.json')
+const racesSeed = require('./public/races.json')
 const app = express()
 let db
 
@@ -15,6 +16,16 @@ const insertMember = m => {
   .then(() => db.get('SELECT last_insert_rowid() as id'))
   .then(({ id }) => db.get('SELECT * from members WHERE id = ?', id))
 }
+
+
+//date format YYYY-MM-DD HH:MM:SS.SSS
+const insertRace = r => {
+  const { date, } = r
+  return db.get('INSERT INTO races(date) VALUES(?)', date)
+  .then(() => db.get('SELECT last_insert_rowid() as id'))
+  .then(({ id }) => db.get('SELECT * from races WHERE id = ?', id))
+}
+
 // code qui remplit la db exemple
 const dbPromise = Promise.resolve()
 .then(() => sqlite.open('./database.sqlite', { Promise }))
@@ -23,6 +34,7 @@ const dbPromise = Promise.resolve()
   return db.migrate({ force: 'last' })
 })
 .then(() => Promise.map(usersSeed, m => insertMember(m)))
+.then(() => Promise.map(racesSeed, r => insertRace(r)))
 
 
 

@@ -1,0 +1,43 @@
+[
+    {
+        "race_id": 1,
+        "player_id": 1,
+        "position": 1
+    },
+    {
+        "race_id": 1,
+        "player_id": 2,
+        "position": 3
+    },
+    {
+        "race_id": 1,
+        "player_id": 3,
+        "position": 2
+    },
+    {
+        "race_id": 1,
+        "player_id": 4,
+        "position": 4
+    },
+    {
+        "race_id": 2,
+        "player_id": 1,
+        "position": 4
+    },
+    {
+        "race_id": 2,
+        "player_id": 2,
+        "position": 3
+    },
+    {
+        "race_id": 2,
+        "player_id": 3,
+        "position": 2
+    },
+    {
+        "race_id": 2,
+        "player_id": 4,
+        "position": 1
+    }
+    
+]
