@@ -4,6 +4,7 @@ const Promise = require('bluebird')
 const bodyParser = require('body-parser')
 const usersSeed = require('./public/members.json')
 const racesSeed = require('./public/races.json')
+const playersHasRacesSeed = require('./public/players_has_races.json') 
 const app = express()
 let db
 
@@ -26,6 +27,13 @@ const insertRace = r => {
   .then(({ id }) => db.get('SELECT * from races WHERE id = ?', id))
 }
 
+const insertPlayerRace = pr => {
+  const { race_id, player_id, position } = pr
+  return db.get('INSERT INTO players_has_races(race_id, player_id, position) VALUES(?, ?, ?)', race_id, player_id, position)
+  .then(() => db.get('SELECT * from players_has_races'))
+}
+
+
 // code qui remplit la db exemple
 const dbPromise = Promise.resolve()
 .then(() => sqlite.open('./database.sqlite', { Promise }))
@@ -35,6 +43,9 @@ const dbPromise = Promise.resolve()
 })
 .then(() => Promise.map(usersSeed, m => insertMember(m)))
 .then(() => Promise.map(racesSeed, r => insertRace(r)))
+.then(() => Promise.map(playersHasRacesSeed, pr => insertPlayerRace(pr).then(pr => console.log(`player classement ${pr.race_id}`))))
+  
+
 
 
 

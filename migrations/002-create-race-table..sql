@@ -7,8 +7,8 @@ CREATE TABLE races (
 CREATE TABLE players_has_races (
   race_id INTEGER,
   player_id INTEGER,
-  position INTEGER
-  FOREIGN KEY(race_id) REFERENCES races(id)
+  position INTEGER,
+  FOREIGN KEY(race_id) REFERENCES races(id),
   FOREIGN KEY(player_id) REFERENCES members(id)
 );
 
