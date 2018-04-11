@@ -40,6 +40,26 @@ const controllers = {
           <div class="row">${album}</div>
       </div>`)
     ),
+    '/calendrier': () => {
+      fetch('/courses')
+      .then(res => res.json())
+      .then(course => {
+        let liste = `<ul>`
+        for ( let race of course ) {
+          //liste += `<li>${race.players[0].name}</li>`
+          //liste += `<li>${race.players[1].name}</li>`
+          for ( let player of race.players) {
+            liste += `<li>${player.name}</li>`
+          }
+          console.log(liste)
+
+        }
+        liste += `<ul>`
+        render(liste)
+      })
+    },
+
+
 
     '/members/new': () => {
       //construit le formulaire
@@ -70,7 +90,7 @@ const controllers = {
            <div class="form-group">
            <label for="inputImageUrl">Image URL</label>
            <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
-         </div> 
+          </div> 
           <div class="form-group">
             <label for="inputEmail">Email</label>
             <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
@@ -125,6 +145,7 @@ const routing = () => {
     '/',  
     '/members/new',
     '/information',
+    '/calendrier',
     '*'
   ]
   routes.forEach(
