@@ -7,9 +7,9 @@ const render = html => {
 const makeCard = item => `
   <div class="col-12 col-md-3">
     <div class="card mb-4 box-shadow">
-    <img class="card-img-top" style="height: 18rem;" src="${item.image}" alt="avatar" />
+    <img class="card-img-top" src="${item.image}" alt="avatar" />
       <div class="card-body">
-        <p class="card-text" style="height: 80px">${item.nickname}'s profile</p>
+        <p class="card-text">${item.nickname}'s profile</p>
       </div>
     </div>
   </div>`
