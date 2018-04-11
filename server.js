@@ -10,8 +10,8 @@ app.use(express.static('public'))
 app.use(bodyParser.json())
 
 const insertMember = m => {
-  const { name, nickname, email, password } = m
-  return db.get('INSERT INTO members(name, nickname, email, password) VALUES(?, ?, ?, ?)', name, nickname, email, password)
+  const { image, name, nickname, email, password, } = m
+  return db.get('INSERT INTO members(image, name, nickname, email, password) VALUES(?, ?, ?, ?, ?)', image, name, nickname, email, password)
   .then(() => db.get('SELECT last_insert_rowid() as id'))
   .then(({ id }) => db.get('SELECT * from members WHERE id = ?', id))
 }
@@ -35,7 +35,8 @@ const html = `
     <title>Mario Kart Contest</title>
     <link rel="icon" type="image" href="favicon.ico"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
-  </head>
+    <link rel="stylesheet" href="/style.css">
+    </head>
   <body>
     <div id="main">
     </div>

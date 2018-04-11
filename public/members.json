@@ -1,26 +1,30 @@
 [
 {
-    "name" : "Ana",
-    "nickname" : "Ere",
+    "name" : "Anahita",
+    "nickname" : "Erenude",
     "email": "anahita.vahdani@neuf.fr",
-    "password":"motdepasse"
+    "password":"motdepasse",
+    "image": "https://ih1.redbubble.net/image.52041676.7393/flat,800x800,070,f.u2.jpg"
   },
   {
     "name" : "Dorian",
     "nickname" : "Cynnah",
-    "email": "anahita.vahdani@neuf.fr",
-    "password":"motdepasse"
+    "email": "massot.dorian@gmail.com",
+    "password":"motdepasse",
+    "image": "https://pbs.twimg.com/profile_images/789941206298025986/9wHae_U7_400x400.jpg"
   },
   {
     "name" : "Khalid",
-    "nickname" : "Ere",
+    "nickname" : "Marco",
     "email": "anahita.vahdani@neuf.fr",
-   "password":"motdepasse"
+    "password":"motdepasse",
+    "image": "http://s1.e-monsite.com/2009/06/13/03/62923709normal-bowser-jpg.jpg"
   },
   {
     "name" : "Anthony",
     "nickname" : "Elmoro",
-    "email": "anahita.vahdani@neuf.fr",
-   "password":"motdepasse"
+    "email": "anthonyfischer@fee.fr",
+    "password":"motdepasse",
+    "image": "http://www.culture-games.com/wp-content/uploads/personnages/Sephiroth_Portrait.jpg"
   } 
 ]

@@ -5,10 +5,11 @@ const render = html => {
 }
 
 const makeCard = item => `
-  <div class="col-md-4">
+  <div class="col-12 col-md-3">
     <div class="card mb-4 box-shadow">
+    <img class="card-img-top" src="${item.image}" alt="avatar" />
       <div class="card-body">
-        <p class="card-text" style="height: 80px">${item.name}</p>
+        <p class="card-text">${item.nickname}'s profile</p>
       </div>
     </div>
   </div>`
@@ -33,8 +34,8 @@ const controllers = {
         <div class="jumbotron">
           <h1 class="display-3">Welcome to Mario Kart Tournament</h1>
           <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          <p><a class="btn btn-primary btn-lg" href="/about" role="button">Learn more »</a></p>
-          <p><a class="btn btn-success btn-lg" href="/members/new" role="button">Add a member »</a></p>
+          <p><a class="btn btn-primary btn-lg" href="/information" role="button">A propos »</a></p>
+          <p><a class="btn btn-success btn-lg" href="/members/new" role="button">S'inscrire »</a></p>
         </div>
           <div class="row">${album}</div>
       </div>`)
@@ -50,8 +51,8 @@ const controllers = {
         <h2>Inscription pour le tournoi !</h2>
         <form id="add-member">
           <div class="form-group">
-            <label for="inputFirstName">Prénom</label>
-            <input name="firstName" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prénom">
+            <label for="inputName">Prénom</label>
+            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prénom">
           </div>
           <div class="form-group">
             <label for="inputNickname">Pseudo</label>
@@ -66,9 +67,13 @@ const controllers = {
               <input class="form-check-input form-control" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
               <label class="form-check-label" for="inlineRadio2">TEAM CAPSULE</label>
            </div>
+           <div class="form-group">
+           <label for="inputImageUrl">Image URL</label>
+           <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
+         </div> 
           <div class="form-group">
             <label for="inputEmail">Email</label>
-            <input name="Email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
+            <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
           </div>
           <div class="form-group">
             <label for="inputPassword">Mot de passe</label>
@@ -95,11 +100,22 @@ const controllers = {
         .then(members => {
           const alertBox = document.getElementById('alert-box')
           alertBox.className = 'alert alert-success'
-          alertBox.innerHTML = `Successfully created member ${members.name}`
+          alertBox.innerHTML += `${members.name} est inscrit`
+          alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
         })
+        window.setTimeout(() => 
+        { window.location = "/"; },5000);
       })
     },
-
+    '/information': () => render(
+      `<div class="container">
+        <section class="jumbotron text-center">
+          <h1 class="jumbotron-heading">A propos</h1>
+          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+          <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
+       </section>
+      </div>`
+    ),
 
     '*': () => render('<h1>Not Found</h1>'),
 }
@@ -108,6 +124,7 @@ const routing = () => {
   const routes = [
     '/',  
     '/members/new',
+    '/information',
     '*'
   ]
   routes.forEach(
