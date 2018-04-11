@@ -117,6 +117,10 @@ app.post('/members', (req, res) => {
   .then(record => res.json(record))
 })
 
+app.get('/courses', (req, res) => {
+  const course = []
+})
+
 //READ
 app.get('*', (req, res) => {
   res.send(html)
