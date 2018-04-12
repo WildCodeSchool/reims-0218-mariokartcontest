@@ -14,6 +14,32 @@ const makeCard = item => `
     </div>
   </div>`
 
+const makeRaceCard = race => {
+  
+  let liste = `<ul>`
+    
+      for (let i = 0 ; i < race.players.length ; i++){
+      console.log(`${race.players[i].name}`)
+    
+      //renvoi la lite des players dans la card
+      liste += `<li>${race.players[i].name}</li>`
+     // console.log (liste)
+      }
+    
+  
+return `
+<div class="col-12 col-md-3">
+  <div class="card mb-4 box-shadow">
+    <div class="card-body">
+      <p class="card-text">${race.date}</p>
+      <p class="card-text">${liste}</p>
+    </div>
+  </div>
+</div>`}
+         // }
+  // parcourir race.players pour faire une liste html
+
+
 
 const serializeForm = form => {
   const data = {}
@@ -40,27 +66,50 @@ const controllers = {
           <div class="row">${album}</div>
       </div>`)
     ),
-    '/calendrier': () => {
+    '/calendrier': () => 
       fetch('/courses')
       .then(res => res.json())
-      .then(course => {
+      .then(races => races.reduce((carry, race) => carry + makeRaceCard(race),''))
+      .then(gpCard => render(
+        `<div class="container">
+          <div class="jumbotron">
+            <h1 class="display-3">Welcome to Mario Kart Tournament</h1>
+            <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+          </div>
+            <div class="row">${gpCard}</div>
+        </div>`)
+       
+      ),
+     
+
+      /*
+      fetch('/courses')
+      .then(res => res.json())
+      .then(races => {
         let liste = `<ul>`
-        for ( let race of course ) {
+        // course => races 
+        for ( let race of races ) {
+         // console.log(race.players)
+          //console.log(race.players)
           //liste += `<li>${race.players[0].name}</li>`
           //liste += `<li>${race.players[1].name}</li>`
           for ( let player of race.players) {
-            liste += `<li>${player.name}</li>`
+            liste += `<li>${player.nickname}</li>`
           }
-          console.log(liste)
-
         }
-        liste += `<ul>`
-        render(liste)
-      })
-    },
-
-
-
+        liste += `</ul>`
+        render( `
+        <div class="container">
+        <div class="row">
+        <div class="card col-md-3 mr-1" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Course 1</h5>
+            <p class="card-text">${liste}</p>
+          </div>
+        </div>`
+            ) 
+      })*/
+    
     '/members/new': () => {
       //construit le formulaire
       render(
@@ -124,7 +173,7 @@ const controllers = {
           alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
         })
         window.setTimeout(() => 
-        { window.location = "/"; },5000);
+        { window.location = "/"; },3000);
       })
     },
     '/information': () => render(
