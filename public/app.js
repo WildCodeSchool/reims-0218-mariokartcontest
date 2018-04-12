@@ -23,7 +23,7 @@ const makeRaceCard = race => {
     
       //renvoi la lite des players dans la card
       liste += `<li>${race.players[i].name}</li>`
-     // console.log (liste)
+      // console.log (liste)
       }
     
   
@@ -36,7 +36,6 @@ return `
     </div>
   </div>
 </div>`}
-         // }
   // parcourir race.players pour faire une liste html
 
 
@@ -80,37 +79,8 @@ const controllers = {
             </div>
             <div class="row">${gpCard}</div>
         </div>`)
-       
-      ),
-     
 
-      /*
-      fetch('/courses')
-      .then(res => res.json())
-      .then(races => {
-        let liste = `<ul>`
-        // course => races 
-        for ( let race of races ) {
-         // console.log(race.players)
-          //console.log(race.players)
-          //liste += `<li>${race.players[0].name}</li>`
-          //liste += `<li>${race.players[1].name}</li>`
-          for ( let player of race.players) {
-            liste += `<li>${player.nickname}</li>`
-          }
-        }
-        liste += `</ul>`
-        render( `
-        <div class="container">
-        <div class="row">
-        <div class="card col-md-3 mr-1" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Course 1</h5>
-            <p class="card-text">${liste}</p>
-          </div>
-        </div>`
-            ) 
-      })*/
+      ),
     
     '/members/new': () => {
       //construit le formulaire
@@ -130,17 +100,17 @@ const controllers = {
             <input name="nickname" type="text" class="form-control" id="inputNickname" placeholder="Entrez votre pseudo">
           </div>
             <p>Choisissez votre équipe</br></p>
-           <div class="form-check form-check-inline">
+          <div class="form-check form-check-inline">
               <input class="form-check-input form-control"  type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
               <label class="form-check-label" for="inlineRadio1">TEAM WILD</label>
             </div>
             <div class="form-check form-check-inline">
               <input class="form-check-input form-control" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
               <label class="form-check-label" for="inlineRadio2">TEAM CAPSULE</label>
-           </div>
-           <div class="form-group">
-           <label for="inputImageUrl">Image URL</label>
-           <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
+            </div>
+            <div class="form-group">
+            <label for="inputImageUrl">Image URL</label>
+            <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
           </div> 
           <div class="form-group">
             <label for="inputEmail">Email</label>
@@ -184,7 +154,7 @@ const controllers = {
           <h1 class="jumbotron-heading">A propos</h1>
           <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
           <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
-       </section>
+        </section>
       </div>`
     ),
 
