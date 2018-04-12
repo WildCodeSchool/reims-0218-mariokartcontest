@@ -62,6 +62,7 @@ const controllers = {
           <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
           <p><a class="btn btn-primary btn-lg" href="/information" role="button">A propos »</a></p>
           <p><a class="btn btn-success btn-lg" href="/members/new" role="button">S'inscrire »</a></p>
+          <p><a class="btn btn-success btn-lg" href="/calendrier" role="button">Calendrier »</a></p>
         </div>
           <div class="row">${album}</div>
       </div>`)
@@ -73,9 +74,10 @@ const controllers = {
       .then(gpCard => render(
         `<div class="container">
           <div class="jumbotron">
-            <h1 class="display-3">Welcome to Mario Kart Tournament</h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          </div>
+            <h1 class="display-3">Calendrier</h1>
+            <p></p>
+            <p><a class="btn btn-success btn-lg" href="/" role="button">Accueil</a></p>
+            </div>
             <div class="row">${gpCard}</div>
         </div>`)
        
