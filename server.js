@@ -118,53 +118,47 @@ app.post('/members', (req, res) => {
 })
 
 app.get('/courses', (req, res) => {
-  const course = [
-    {
-      date: "18h00",
-        
-        players: [
-            {
-              name : "Anahita",
-              nickname : "Erenude",
-            },
-            {
-              name : "Dorian",
-              nickname : "Cynnah",
-            },
-            {
-              name : "Khalid",
-              nickname : "Marco",
-            },
-            {
-              name : "Anthony",
-              nickname : "Elmoro"
-            } 
-        ],
-
-      date: "19h00",
-
-        players: [
-          {
-            name : "Anahita",
-            nickname : "Erenude",
-          },
-          {
-            name : "Dorian",
-            nickname : "Cynnah",
-          },
-          {
-            name : "Khalid",
-            nickname : "Marco",
-          },
-          {
-            name : "Anthony",
-            nickname : "Elmoro"
-          }
+  db.all(
+    `SELECT * 
+      from races
+      join players_has_races on players_has_races.race_id = races.id
+      join members on members.id = players_has_races.player_id
+    `
+  )
+  .then(records => {
+   
+    const racesPlayers = records.map(
+      race => ({
+        id: race.race_id,
+        date: race.date,
+        player: {
+          id: race.player_id,
+          name: race.name,
+          nickname: race.nickname,
+          image: race.image,
+          position: race.position
+        }
+      })
+    ).reduce((acc, race) => {
+      if (!acc[race.id]) {
+        acc[race.id] = {
+          id: race.id,
+          date: race.date,
+          players: [race.player]
+        }
+      } else {
+        acc[race.id].players = [
+          race.player,
+          ...acc[race.id].players
         ]
-    }]
+      }
+      return acc
+    }, {})
 
-  res.json(course)  
-}),
+    return res.json(Object.values(racesPlayers))
+  })
+
+})
 
 //READ
 app.get('*', (req, res) => {
