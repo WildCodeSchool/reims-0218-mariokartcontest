@@ -38,6 +38,29 @@ return `
 </div>`}
   // parcourir race.players pour faire une liste html
 
+  const makeClassement = race => {
+  
+    let liste = `<ul>`
+      
+        for (let i = 0 ; i < race.players.length ; i++){
+        console.log(`${race.players[i].name}`)
+      
+        //renvoi la lite des players dans la card
+        liste += `<li> Classement de ${race.players[i].name} : ${race.players[i].position}</li>`
+        // console.log (liste)
+        }
+      
+    
+  return `
+  <div class="col-12 col-md-4">
+    <div class="card mb-4 box-shadow">
+      <div class="card-body">
+        <p class="card-text">${race.date}</p>
+        <p class="card-text">${liste}</p>
+      </div>
+    </div>
+  </div>`}
+
 
 
 const serializeForm = form => {
@@ -81,6 +104,23 @@ const controllers = {
         </div>`)
 
       ),
+
+    '/classement': () =>
+      fetch('/courses')
+      .then(res => res.json())
+      .then(races => races.reduce((carry, race) => carry + makeClassement(race),''))
+      .then(gpCard => render(
+        `<div class="container">
+          <div class="jumbotron ImageClassement">
+            <h1 class="display-3 titleClassement">Classement</h1>
+            <p></p>
+            <p><a class="btn btn-success btn-lg boutonAcceuilClassement" href="/" role="button">Accueil</a></p>
+            </div>
+            <div class="row">${gpCard}</div>
+        </div>`)
+
+      
+    ),
     
     '/members/new': () => {
       //construit le formulaire
@@ -167,6 +207,7 @@ const routing = () => {
     '/members/new',
     '/information',
     '/calendrier',
+    '/classement',
     '*'
   ]
   routes.forEach(
