@@ -14,6 +14,31 @@ const makeCard = item => `
     </div>
   </div>`
 
+const makeRaceCard = race => {
+  
+  let liste = `<ul>`
+    
+      for (let i = 0 ; i < race.players.length ; i++){
+      console.log(`${race.players[i].name}`)
+    
+      //renvoi la lite des players dans la card
+      liste += `<li>${race.players[i].name}</li>`
+      // console.log (liste)
+      }
+    
+  
+return `
+<div class="col-12 col-md-3">
+  <div class="card mb-4 box-shadow">
+    <div class="card-body">
+      <p class="card-text">${race.date}</p>
+      <p class="card-text">${liste}</p>
+    </div>
+  </div>
+</div>`}
+  // parcourir race.players pour faire une liste html
+
+
 
 const serializeForm = form => {
   const data = {}
@@ -36,11 +61,27 @@ const controllers = {
           <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
           <p><a class="btn btn-primary btn-lg" href="/information" role="button">A propos »</a></p>
           <p><a class="btn btn-success btn-lg" href="/members/new" role="button">S'inscrire »</a></p>
+          <p><a class="btn btn-success btn-lg" href="/calendrier" role="button">Calendrier »</a></p>
         </div>
           <div class="row">${album}</div>
       </div>`)
     ),
+    '/calendrier': () => 
+      fetch('/courses')
+      .then(res => res.json())
+      .then(races => races.reduce((carry, race) => carry + makeRaceCard(race),''))
+      .then(gpCard => render(
+        `<div class="container">
+          <div class="jumbotron">
+            <h1 class="display-3">Calendrier</h1>
+            <p></p>
+            <p><a class="btn btn-success btn-lg" href="/" role="button">Accueil</a></p>
+            </div>
+            <div class="row">${gpCard}</div>
+        </div>`)
 
+      ),
+    
     '/members/new': () => {
       //construit le formulaire
       render(
@@ -59,18 +100,18 @@ const controllers = {
             <input name="nickname" type="text" class="form-control" id="inputNickname" placeholder="Entrez votre pseudo">
           </div>
             <p>Choisissez votre équipe</br></p>
-           <div class="form-check form-check-inline">
+          <div class="form-check form-check-inline">
               <input class="form-check-input form-control"  type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
               <label class="form-check-label" for="inlineRadio1">TEAM WILD</label>
             </div>
             <div class="form-check form-check-inline">
               <input class="form-check-input form-control" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
               <label class="form-check-label" for="inlineRadio2">TEAM CAPSULE</label>
-           </div>
-           <div class="form-group">
-           <label for="inputImageUrl">Image URL</label>
-           <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
-         </div> 
+            </div>
+            <div class="form-group">
+            <label for="inputImageUrl">Image URL</label>
+            <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
+          </div> 
           <div class="form-group">
             <label for="inputEmail">Email</label>
             <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
@@ -104,7 +145,7 @@ const controllers = {
           alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
         })
         window.setTimeout(() => 
-        { window.location = "/"; },5000);
+        { window.location = "/"; },3000);
       })
     },
     '/information': () => render(
@@ -113,7 +154,7 @@ const controllers = {
           <h1 class="jumbotron-heading">A propos</h1>
           <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
           <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
-       </section>
+        </section>
       </div>`
     ),
 
@@ -125,6 +166,7 @@ const routing = () => {
     '/',  
     '/members/new',
     '/information',
+    '/calendrier',
     '*'
   ]
   routes.forEach(
