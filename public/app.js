@@ -34,18 +34,18 @@ const makeCard = item => `
   </div>`
 
 const makeRaceCard = race => {
-  
+
   let liste = `<ul>`
-    
+
       for (let i = 0 ; i < race.players.length ; i++){
       console.log(`${race.players[i].name}`)
-    
+
       //renvoi la lite des players dans la card
       liste += `<li>${race.players[i].name}</li>`
       // console.log (liste)
       }
-    
-  
+
+
 return `
 <div class="col-12 col-md-3">
   <div class="card mb-4 box-shadow">
@@ -58,18 +58,18 @@ return `
   // parcourir race.players pour faire une liste html
 
   const makeClassement = race => {
-  
+
     let liste = `<ul>`
-      
+
         for (let i = 0 ; i < race.players.length ; i++){
         console.log(`${race.players[i].name}`)
-      
+
         //renvoi la lite des players dans la card
         liste += `<li> Classement de ${race.players[i].name} : ${race.players[i].position}</li>`
         // console.log (liste)
         }
-      
-    
+
+
   return `
   <div class="col-12 col-md-4">
     <div class="card mb-4 box-shadow">
@@ -92,17 +92,24 @@ const serializeForm = form => {
 }
 
 const controllers = {
-  '/': () => 
+  '/': () =>
     fetch('/members')
     .then(res => res.json())
     .then(members => members.reduce((carry, member) => carry + makeCard(member),''))
     .then(album => render(
-      `${navbar}
-      <div class="container">
-      <div class="row">${album}</div>
+      `<div class="container">
+        <div class="jumbotron wallpaper">
+          <h1 class="display-3">Welcome to Mario Kart Tournament !</h1>
+          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+
+        </div>
+
+
+
+          <div class="row">${album}</div>
       </div>`)
     ),
-    '/calendrier': () => 
+    '/calendrier': () =>
       fetch('/courses')
       .then(res => res.json())
       .then(races => races.reduce((carry, race) => carry + makeRaceCard(race),''))
@@ -133,13 +140,13 @@ const controllers = {
             <div class="row">${gpCard}</div>
         </div>`)
 
-      
+
     ),
-    
+
     '/members/new': () => {
       //construit le formulaire
       render(
-      `${navbar} 
+      `${navbar}
       <div class="container">
         <div id="alert-box" class="hidden">
         </div>
@@ -165,7 +172,7 @@ const controllers = {
             <div class="form-group">
             <label for="inputImageUrl">Image URL</label>
             <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
-          </div> 
+          </div>
           <div class="form-group">
             <label for="inputEmail">Email</label>
             <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
@@ -198,7 +205,7 @@ const controllers = {
           alertBox.innerHTML += `${members.name} est inscrit`
           alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
         })
-        window.setTimeout(() => 
+        window.setTimeout(() =>
         { window.location = "/"; },3000);
       })
     },
@@ -218,7 +225,7 @@ const controllers = {
 
 const routing = () => {
   const routes = [
-    '/',  
+    '/',
     '/members/new',
     '/information',
     '/calendrier',
