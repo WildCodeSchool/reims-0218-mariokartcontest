@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'MarioKart';
+    src: url('Mario-Kart-DS.ttf')
+}
+
+
 .card-img-top {
     height: 18rem;
 }
@@ -19,6 +25,22 @@
 .display-3{
     color: purple;
     text-align: center;
-    font-size:  3em;  
+    font-size:  3em;
     opacity: 1;
+}
+
+.ImageClassement {
+    background-image: url("https://i.imgur.com/0u0jFMo.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 480px;
+}
+
+.titleClassement {
+    font-family: 'Mario-Kart-DS.ttf', sans-serif;
+}
+
+.boutonAcceuilClassement {
+    margin-left: 7em;
+    margin-top: 10em;
 }
