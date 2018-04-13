@@ -5,3 +5,20 @@
 .card-text {
     height: 60px
 }
+
+.wallpaper{
+    background-image: url("https://www.wallpapersbrowse.com/images/xo/xosuwnq.png");
+    background-size: cover;
+    margin-top: 20px;
+    opacity: 0.5;
+    font-size:  1.5em;
+    vertical-align: text-top;
+
+}
+
+.display-3{
+    color: purple;
+    text-align: center;
+    font-size:  3em;  
+    opacity: 1;
+}
