@@ -36,17 +36,11 @@ const makeCard = item => `
   </div>`
 
 const makeRaceCard = race => {
-
   let liste = `<ul>`
-
       for (let i = 0 ; i < race.players.length ; i++){
-      console.log(`${race.players[i].name}`)
-
       //renvoi la lite des players dans la card
-      liste += `<li>${race.players[i].name}</li>`
-      // console.log (liste)
+        liste += `<li>${race.players[i].name}</li>`
       }
-
 
 return `
 <div class="col-12 col-md-3">
@@ -58,19 +52,12 @@ return `
   </div>
 </div>`}
   // parcourir race.players pour faire une liste html
-
   const makeClassement = race => {
-
     let liste = `<ul>`
-
-        for (let i = 0 ; i < race.players.length ; i++){
-        console.log(`${race.players[i].name}`)
-
-        //renvoi la lite des players dans la card
+      for (let i = 0 ; i < race.players.length ; i++){
+      //renvoi la lite des players dans la card
         liste += `<li> Classement de ${race.players[i].name} : ${race.players[i].position}</li>`
-        // console.log (liste)
-        }
-
+      }
 
   return `
   <div class="col-12 col-md-4">
@@ -86,6 +73,7 @@ return `
 
 const serializeForm = form => {
   const data = {}
+  console.log(data)
   const elements = form.getElementsByClassName('form-control')
   for(el of elements) {
     data[el.name] = el.value
@@ -149,11 +137,18 @@ const controllers = {
           <label for="inputdate">Date de la course (YYYY-MM-DD HH:MM:SS.SSS)</label>
             <input name="date" type="text" class="form-control" id="inputFirstName" placeholder="YYYY-MM-DD HH:MM:SS.SSS">
           </div>
+          <select id="bdd" class="form-control mb-2">
+            <option>Default select</option>
+          </select>
           <button type="submit" class="btn btn-primary">Créer votre course</button>
         </form>
       </div>`
       )
-      //js du formulaire
+      //js du menu déroulant 
+      const menuDeroulant = document.getElementById('bdd')
+      
+
+      //js du formulaire création de course
       const form = document.getElementById('add-race')
       form.addEventListener('submit', e => {
         e.preventDefault()
@@ -170,7 +165,7 @@ const controllers = {
         .then(races => {
           const alertBox = document.getElementById('alert-box')
           alertBox.className = 'alert alert-success'
-          alertBox.innerHTML += `$Course créée`
+          alertBox.innerHTML += `Course créée`
          // alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
         })
         window.setTimeout(() =>
@@ -220,6 +215,7 @@ const controllers = {
         </form>
       </div>`
     )
+      
       //js du formulaire
       const form = document.getElementById('add-member')
       form.addEventListener('submit', e => {

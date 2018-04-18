@@ -96,14 +96,13 @@
 
   app.get('/courses', (req, res) => {
     db.all(
-      `SELECT * 
-        from races
-        join players_has_races on players_has_races.race_id = races.id
-        join members on members.id = players_has_races.player_id
+      `SELECT races.id as race_id, races.date, members.id as player_id, position, name, nickname, image
+      from races
+      left join players_has_races on players_has_races.race_id = races.id
+      left join members on members.id = players_has_races.player_id
       `
     )
     .then(records => {
-    
       const racesPlayers = records.map(
         race => ({
           id: race.race_id,
@@ -121,7 +120,7 @@
           acc[race.id] = {
             id: race.id,
             date: race.date,
-            players: [race.player]
+            players: race.player.id ? [race.player] : []
           }
         } else {
           acc[race.id].players = [
@@ -131,8 +130,8 @@
         }
         return acc
       }, {})
-
       return res.json(Object.values(racesPlayers))
+
     })
 
   })
