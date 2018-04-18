@@ -24,8 +24,7 @@ describe ('makePlayer ', ()=> {
   it ('should return a string',()=>{
     chai.assert.typeOf(makePlayer(player),'string')
   })
-  // it ('should return an html string of a player', () => {
-  //    const result = cleanHtml(makePlayer(somePlayer))
-  //   chai.assert.equal(makePlayer(player), expectedHtml)
-  // })
+  it ('should return an html string of a player', () => {
+    chai.assert.equal(makePlayer(player), expectedHtml)
+  })
 })
