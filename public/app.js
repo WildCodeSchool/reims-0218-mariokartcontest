@@ -1,4 +1,8 @@
+//import makeClassement from './classement.js';
+
 const mainDiv = document.getElementById('main')
+ 
+
 
 const render = html => {
   mainDiv.innerHTML = html
@@ -37,27 +41,26 @@ const makeRaceCard = race => {
 
   let liste = `<ul>`
 
-      for (let i = 0 ; i < race.players.length ; i++){
-      console.log(`${race.players[i].name}`)
+  for (let i = 0 ; i < race.players.length ; i++){
+    console.log(`${race.players[i].name}`)
+    //renvoi la lite des players dans la card
+    liste += `<li>${race.players[i].name}</li>`
+    // console.log (liste)
+  }
 
-      //renvoi la lite des players dans la card
-      liste += `<li>${race.players[i].name}</li>`
-      // console.log (liste)
-      }
+  return `
+    <div class="col-12 col-md-3">
+      <div class="card mb-4 box-shadow">
+        <div class="card-body">
+          <p class="card-text">${race.date}</p>
+          <p class="card-text">${liste}</p>
+        </div>
+      </div>
+    </div>`
+  }
 
-
-return `
-<div class="col-12 col-md-3">
-  <div class="card mb-4 box-shadow">
-    <div class="card-body">
-      <p class="card-text">${race.date}</p>
-      <p class="card-text">${liste}</p>
-    </div>
-  </div>
-</div>`}
   // parcourir race.players pour faire une liste html
-
-  const makeClassement = race => {
+ const makeClassement = race => {
 
     let liste = `<ul>`
 
@@ -71,14 +74,14 @@ return `
 
 
   return `
-  <div class="col-12 col-md-4">
-    <div class="card mb-4 box-shadow">
-      <div class="card-body">
-        <p class="card-text">${race.date}</p>
-        <p class="card-text">${liste}</p>
-      </div>
-    </div>
-  </div>`}
+      <div class="col-12 col-md-4">
+        <div class="card mb-4 box-shadow">
+          <div class="card-body">
+            <p class="card-text">${race.date}</p>
+            <p class="card-text">${liste}</p>
+          </div>
+        </div>
+      </div>`}
 
 
 

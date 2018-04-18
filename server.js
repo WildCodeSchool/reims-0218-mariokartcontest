@@ -64,7 +64,7 @@
       <div id="main">
       </div>
     <script src="/page.js"></script>
-    <script src="/app.js"></script>
+    <script type="module"  src="/app.js"></script>
     </body>
   </html>`
 
