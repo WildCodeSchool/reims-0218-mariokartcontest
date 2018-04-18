@@ -36,6 +36,7 @@ const makeCard = item => `
   </div>`
 
 const makeRaceCard = race => {
+  console.log()
   let liste = `<ul>`
       for (let i = 0 ; i < race.players.length ; i++){
       //renvoi la lite des players dans la card

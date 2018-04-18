@@ -83,6 +83,7 @@
   })
 
 
+
   //CREATE
   app.post('/members', (req, res) => {
     return insertMember(req.body)
@@ -91,6 +92,12 @@
 
   app.post('/race', (req, res) => {
     return insertRace(req.body)
+    .then(record => res.json(record))
+  })
+
+  app.post('/addPlayerToRace', (req, res) => {
+    console.log(req.body)
+    return insertPlayerRace(req.body)
     .then(record => res.json(record))
   })
 
