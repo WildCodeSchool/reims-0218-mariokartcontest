@@ -146,8 +146,8 @@ const controllers = {
           <h2>Création de la course</h2>
           <form id="add-race">
           <div class="form-group">
-          <label for="inputdate">Date de la course</label>
-            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="YYYY-MM-DD HH:MM:SS.SSS">
+          <label for="inputdate">Date de la course (YYYY-MM-DD HH:MM:SS.SSS)</label>
+            <input name="date" type="text" class="form-control" id="inputFirstName" placeholder="YYYY-MM-DD HH:MM:SS.SSS">
           </div>
           <button type="submit" class="btn btn-primary">Créer votre course</button>
         </form>
