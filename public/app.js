@@ -102,12 +102,8 @@ const controllers = {
         <div class="jumbotron wallpaper">
           <h1 class="display-3">Welcome to Mario Kart Tournament !</h1>
           <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-
         </div>
-
-
-
-          <div class="row">${album}</div>
+        <div class="row">${album}</div>
       </div>`)
     ),
     '/calendrier': () =>
@@ -124,9 +120,7 @@ const controllers = {
             </div>
             <div class="row">${gpCard}</div>
         </div>`)
-
       ),
-
     '/classement': () =>
       fetch('/courses')
       .then(res => res.json())
@@ -140,10 +134,52 @@ const controllers = {
             </div>
             <div class="row">${gpCard}</div>
         </div>`)
-
-
     ),
 
+    'race/new': () => {
+      render(`
+          <div class="container">
+            <div id="alert-box" class="hidden">
+          </div>
+          <h2>Création de la course</h2>
+          <form id="add-race">
+          <div class="form-group">
+          <label for="inputdate">veuillez insérer la date de la course au format YYYY-MM-DD HH:MM:SS.SSS</label>
+            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prénom">
+          </div>
+          <div class="form-group">
+            <label for="inputImageUrl">Image URL</label>
+            <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
+          </div>
+          <button type="submit" class="btn btn-primary">Créer votre course</button>
+        </form>
+      </div>`
+      )
+      //js du formulaire
+      const form = document.getElementById('add-race')
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        const data = serializeForm(form)
+        fetch('/race', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })//appel cette fonction pour gérer les routes
+        .then(res => res.json())
+        .then(races => {
+          const alertBox = document.getElementById('alert-box')
+          alertBox.className = 'alert alert-success'
+          alertBox.innerHTML += `$Course créée`
+          alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
+        })
+        window.setTimeout(() =>
+        { window.location = "/"; },3000);
+      })
+    },
+    
     '/members/new': () => {
       //construit le formulaire
       render(
