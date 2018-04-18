@@ -1,3 +1,3 @@
-const makePlayers = players => `<div>This is my list</div>`
+const makePlayer = player => `<div>This is my list</div>`
 
-export default makePlayers
+export default makePlayer

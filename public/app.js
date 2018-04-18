@@ -1,4 +1,5 @@
 //import makeClassement from './classement.js';
+import makePlayer from './players.js'
 
 const mainDiv = document.getElementById('main')
  
@@ -98,7 +99,7 @@ const controllers = {
   '/': () =>
     fetch('/members')
     .then(res => res.json())
-    .then(members => members.reduce((carry, member) => carry + makeCard(member),''))
+    .then(members => members.reduce((carry, member) => carry + makePlayer(member),''))
     .then(album => render(
       `<div class="container">
         <div class="jumbotron wallpaper">
