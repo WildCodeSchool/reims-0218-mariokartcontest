@@ -75,10 +75,22 @@
     })
   })
 
+  app.get('/race', (req, res) => {
+    db.all('SELECT * from races')
+    .then(records => {
+      return res.json(records)
+    })
+  })
+
 
   //CREATE
   app.post('/members', (req, res) => {
     return insertMember(req.body)
+    .then(record => res.json(record))
+  })
+
+  app.post('/race', (req, res) => {
+    return insertRace(req.body)
     .then(record => res.json(record))
   })
 

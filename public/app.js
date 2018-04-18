@@ -11,14 +11,16 @@ const navbar = `
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/information">A propos</a>
+        <a class="nav-link" href="/information">S'inscrire</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/members/new">S'inscrire</a>
+        <a class="nav-link" href="/members/new">Calendrier</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/calendrier">Calendrier</a>
+        <a class="nav-link" href="/calendrier">Classement</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/classement">A propos</a>
     </ul>
   </div>
 </nav>`
