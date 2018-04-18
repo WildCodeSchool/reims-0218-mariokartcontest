@@ -26,5 +26,5 @@ describe ('makePlayer ', ()=> {
   it ('should return an html string of a player', () => {
     const result = cleanHtml(makePlayer(player))
     chai.assert.equal(result, expectedHtml)
-  })
+  }) 
 })
