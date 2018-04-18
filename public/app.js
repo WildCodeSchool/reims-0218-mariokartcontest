@@ -30,27 +30,6 @@ const navbar = `
 
 
 
-const makeRaceCard = race => {
-
-  let liste = `<ul>`
-
-  for (let i = 0 ; i < race.players.length ; i++){
-    console.log(`${race.players[i].name}`)
-    //renvoi la lite des players dans la card
-    liste += `<li>${race.players[i].name}</li>`
-    // console.log (liste)
-  }
-
-  return `
-    <div class="col-12 col-md-3">
-      <div class="card mb-4 box-shadow">
-        <div class="card-body">
-          <p class="card-text">${race.date}</p>
-          <p class="card-text">${liste}</p>
-        </div>
-      </div>
-    </div>`
-  }
 
   // parcourir race.players pour faire une liste html
  const makeClassement = race => {
