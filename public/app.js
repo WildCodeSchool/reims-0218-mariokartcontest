@@ -138,7 +138,7 @@ const controllers = {
         </div>`)
     ),
 
-    'race/new': () => {
+    '/race/new': () => {
       render(`
           <div class="container">
             <div id="alert-box" class="hidden">
@@ -146,12 +146,8 @@ const controllers = {
           <h2>Création de la course</h2>
           <form id="add-race">
           <div class="form-group">
-          <label for="inputdate">veuillez insérer la date de la course au format YYYY-MM-DD HH:MM:SS.SSS</label>
-            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prénom">
-          </div>
-          <div class="form-group">
-            <label for="inputImageUrl">Image URL</label>
-            <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
+          <label for="inputdate">Date de la course</label>
+            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="YYYY-MM-DD HH:MM:SS.SSS">
           </div>
           <button type="submit" class="btn btn-primary">Créer votre course</button>
         </form>
@@ -175,7 +171,7 @@ const controllers = {
           const alertBox = document.getElementById('alert-box')
           alertBox.className = 'alert alert-success'
           alertBox.innerHTML += `$Course créée`
-          alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
+         // alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
         })
         window.setTimeout(() =>
         { window.location = "/"; },3000);
@@ -267,6 +263,7 @@ const routing = () => {
     '/',
     '/members/new',
     '/information',
+    '/race/new',
     '/calendrier',
     '/classement',
     '*'
