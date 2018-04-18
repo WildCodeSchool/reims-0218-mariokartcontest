@@ -1,6 +1,6 @@
 //import makeClassement from './classement.js';
 import makePlayer from './players.js'
-
+import makeRace from './race.js'
 const mainDiv = document.getElementById('main')
  
 
@@ -28,15 +28,7 @@ const navbar = `
   </div>
 </nav>`
 
-const makeCard = item => `
-  <div class="col-12 col-md-3">
-    <div class="card mb-4 box-shadow">
-    <img class="card-img-top" src="${item.image}" alt="avatar" />
-      <div class="card-body">
-        <p class="card-text">${item.nickname}'s profile</p>
-      </div>
-    </div>
-  </div>`
+
 
 const makeRaceCard = race => {
 
@@ -101,7 +93,8 @@ const controllers = {
     .then(res => res.json())
     .then(members => members.reduce((carry, member) => carry + makePlayer(member),''))
     .then(album => render(
-      `<div class="container">
+      `${navbar}
+      <div class="container">
         <div class="jumbotron wallpaper">
           <h1 class="display-3">Welcome to Mario Kart Tournament !</h1>
           <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
@@ -116,7 +109,7 @@ const controllers = {
     '/calendrier': () =>
       fetch('/courses')
       .then(res => res.json())
-      .then(races => races.reduce((carry, race) => carry + makeRaceCard(race),''))
+      .then(races => races.reduce((carry, race) => carry + makeRace(race),''))
       .then(gpCard => render(
         `${navbar}
         <div class="container">
