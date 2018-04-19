@@ -5,25 +5,25 @@ const render = html => {
 }
 
 const navbar = `
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">
-    <img src="https://78.media.tumblr.com/cdcb363107631b897d58050707df8859/tumblr_ou4ju4oOZy1w76j7uo6_400.gif" width="50" height="50" alt="">Mario Kart Contest</a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/information">S'inscrire</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/members/new">Calendrier</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/calendrier">Classement</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/classement">A propos</a>
-      </ul>
-    </div>
-  </nav>`
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+  <img src="https://78.media.tumblr.com/cdcb363107631b897d58050707df8859/tumblr_ou4ju4oOZy1w76j7uo6_400.gif" width="50" height="50" alt="">Mario Kart Contest</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/members/new">S'inscrire</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/calendrier">Calendrier</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/classement">Classement</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/information">A propos</a>
+    </ul>
+  </div>
+</nav>`
 
 const makeCard = item => `
   <div class="col-12 col-md-3">
@@ -49,7 +49,7 @@ return `
       <p>${race.date}</p>
       <p>${liste}</p>
       <div class"mr-3">
-      <button type="button" class="btn btn-outline-info">Ajout joueurs</button>
+      <button type="button" class="btn btn-outline-info add-player" data-race-id="${race.id}">Ajout joueurs</button>
       </div>
       </div>
   </div>
@@ -101,17 +101,85 @@ const controllers = {
       fetch('/courses')
       .then(res => res.json())
       .then(races => races.reduce((carry, race) => carry + makeRaceCard(race),''))
-      .then(gpCard => render(
-        `${navbar}
-        <div class="container">
-          <div class="jumbotron">
-            <h1 class="display-3">Calendrier</h1>
-            <p></p>
-            <p><a class="btn btn-success btn-lg" href="/" role="button">Accueil</a></p>
+      .then(gpCard => {
+        render(
+          `
+          <div class="modal fade" id="addPlayerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div id="add-player-modal" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
             </div>
-            <div class="row">${gpCard}</div>
-        </div>`)
-      ),
+          </div>  
+          ${navbar}
+          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Launch demo modal
+          </button> --!>
+          <div class="container">
+            <div class="jumbotron">
+              <h1 class="display-3">Calendrier</h1>
+              <p></p>
+              <p><a class="btn btn-success btn-lg" href="/" role="button">Accueil</a></p>
+              </div>
+              <div class="row">${gpCard}</div>
+          </div>`
+        )
+        // get all the btn addPlayer using document.getElementsByClass
+        const addPlayerButtons = document.getElementsByClassName('add-player')
+        const addPlayerModal = document.getElementById('addPlayerModal')
+        for (let addPlayerButton of addPlayerButtons) {
+          addPlayerButton.addEventListener("click", () =>  {
+            // ici récupérer race Id 
+            const raceId = addPlayerButton.dataset.raceId
+            fetch('/members')
+            .then(res => res.json())
+            .then(members => {
+              let liste = ""
+              for ( member of members){
+                liste += `<li class="select-player" data-member-id="${member.id}">${member.name}</li>`
+              }
+              const addPlayerModal = document.getElementById('add-player-modal')
+              addPlayerModal.innerHTML = `<ul>${liste}</ul>`
+              const selectPlayers = document.getElementsByClassName('select-player')
+              for ( let selectPlayer of selectPlayers) {
+                selectPlayer.addEventListener('click', () => {
+                 const playerId = selectPlayer.dataset.memberId
+                  // récupérer player id
+                const addPlayerToRaceData = {
+                  race_id: raceId,
+                  player_id: playerId,
+                  position: 0
+                }
+                console.log(addPlayerToRaceData)
+                fetch('/addPlayerToRace', {
+                  method: 'POST',
+                  headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(addPlayerToRaceData)
+                },
+                window.setTimeout(() =>
+                { window.location = "/calendrier"; })
+                )
+                })
+              }
+            })
+            $(addPlayerModal).modal('show')
+          })
+        }
+      }),
     '/classement': () =>
       fetch('/courses')
       .then(res => res.json())
@@ -138,9 +206,8 @@ const controllers = {
           <label for="inputdate">Date de la course (YYYY-MM-DD HH:MM:SS.SSS)</label>
             <input name="date" type="text" class="form-control" id="inputFirstName" placeholder="YYYY-MM-DD HH:MM:SS.SSS">
           </div>
-          <select id="bdd" class="form-control mb-2">
-            <option>Default select</option>
-          </select>
+          
+
           <button type="submit" class="btn btn-primary">Créer votre course</button>
         </form>
       </div>`
