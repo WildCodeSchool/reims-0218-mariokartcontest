@@ -1,6 +1,7 @@
 //import makeClassement from './classement.js';
 import makePlayer from './players.js'
 import makeRace from './race.js'
+import makeClassement from './classement.js'
 const mainDiv = document.getElementById('main')
  
 
@@ -27,35 +28,6 @@ const navbar = `
     </ul>
   </div>
 </nav>`
-
-
-
-
-  // parcourir race.players pour faire une liste html
- const makeClassement = race => {
-
-    let liste = `<ul>`
-
-        for (let i = 0 ; i < race.players.length ; i++){
-        console.log(`${race.players[i].name}`)
-
-        //renvoi la lite des players dans la card
-        liste += `<li> Classement de ${race.players[i].name} : ${race.players[i].position}</li>`
-        // console.log (liste)
-        }
-
-
-  return `
-      <div class="col-12 col-md-4">
-        <div class="card mb-4 box-shadow">
-          <div class="card-body">
-            <p class="card-text">${race.date}</p>
-            <p class="card-text">${liste}</p>
-          </div>
-        </div>
-      </div>`}
-
-
 
 const serializeForm = form => {
   const data = {}
