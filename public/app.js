@@ -5,25 +5,25 @@ const render = html => {
 }
 
 const navbar = `
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">
-  <img src="https://78.media.tumblr.com/cdcb363107631b897d58050707df8859/tumblr_ou4ju4oOZy1w76j7uo6_400.gif" width="50" height="50" alt="">Mario Kart Contest</a>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/information">S'inscrire</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/members/new">Calendrier</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/calendrier">Classement</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/classement">A propos</a>
-    </ul>
-  </div>
-</nav>`
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+    <img src="https://78.media.tumblr.com/cdcb363107631b897d58050707df8859/tumblr_ou4ju4oOZy1w76j7uo6_400.gif" width="50" height="50" alt="">Mario Kart Contest</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/information">S'inscrire</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/members/new">Calendrier</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/calendrier">Classement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/classement">A propos</a>
+      </ul>
+    </div>
+  </nav>`
 
 const makeCard = item => `
   <div class="col-12 col-md-3">
@@ -36,7 +36,6 @@ const makeCard = item => `
   </div>`
 
 const makeRaceCard = race => {
-  console.log()
   let liste = `<ul>`
       for (let i = 0 ; i < race.players.length ; i++){
       //renvoi la lite des players dans la card
@@ -44,12 +43,15 @@ const makeRaceCard = race => {
       }
 
 return `
-<div class="col-12 col-md-3">
+<div class="col-12 col-md-4">
   <div class="card mb-4 box-shadow">
     <div class="card-body">
-      <p class="card-text">${race.date}</p>
-      <p class="card-text">${liste}</p>
-    </div>
+      <p>${race.date}</p>
+      <p>${liste}</p>
+      <div class"mr-3">
+      <button type="button" class="btn btn-outline-info">Ajout joueurs</button>
+      </div>
+      </div>
   </div>
 </div>`}
   // parcourir race.players pour faire une liste html
@@ -69,8 +71,6 @@ return `
       </div>
     </div>
   </div>`}
-
-
 
 const serializeForm = form => {
   const data = {}
@@ -145,9 +145,7 @@ const controllers = {
         </form>
       </div>`
       )
-      //js du menu déroulant 
-      const menuDeroulant = document.getElementById('bdd')
-      
+
 
       //js du formulaire création de course
       const form = document.getElementById('add-race')
