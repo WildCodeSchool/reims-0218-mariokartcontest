@@ -30,7 +30,6 @@ const navbar = `
 
 const serializeForm = form => {
   const data = {}
-  console.log(data)
   const elements = form.getElementsByClassName('form-control')
   for(let el of elements) {
     data[el.name] = el.value
@@ -103,7 +102,6 @@ const controllers = {
             .then(members => {
               let liste = ""
               for ( let member of members){
-                console.log (members)
                 liste += `<li class="select-player" data-member-id="${member.id}">${member.name}</li>`
               }
               const addPlayerModal = document.getElementById('add-player-modal')
@@ -118,7 +116,6 @@ const controllers = {
                   player_id: playerId,
                   position: 0
                 }
-                console.log(addPlayerToRaceData)
                 fetch('/addPlayerToRace', {
                   method: 'POST',
                   headers: {
@@ -127,8 +124,6 @@ const controllers = {
                   },
                   body: JSON.stringify(addPlayerToRaceData)
                 },
-                window.setTimeout(() =>
-                { window.location = "/calendrier"; })
                 )
                 })
               }
