@@ -142,7 +142,8 @@ const controllers = {
       .then(res => res.json())
       .then(races => races.reduce((carry, race) => carry + makeClassement(race),''))
       .then(gpCard => render(
-        `<div class="container">
+        `${navbar}
+        <div class="container">
           <div class="jumbotron ImageClassement">
             <h1 class="display-3 titleClassement">Classement</h1>
             <p></p>
@@ -154,6 +155,7 @@ const controllers = {
 
     '/race/new': () => {
       render(`
+          ${navbar}
           <div class="container">
             <div id="alert-box" class="hidden">
           </div>
