@@ -63,6 +63,9 @@
     <body>
       <div id="main">
       </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="/page.js"></script>
     <script type="module"  src="/app.js"></script>
     </body>
@@ -75,6 +78,14 @@
     })
   })
 
+  app.get('/race', (req, res) => {
+    db.all('SELECT * from races')
+    .then(records => {
+      return res.json(records)
+    })
+  })
+
+
 
   //CREATE
   app.post('/members', (req, res) => {
@@ -82,16 +93,26 @@
     .then(record => res.json(record))
   })
 
+  app.post('/race', (req, res) => {
+    return insertRace(req.body)
+    .then(record => res.json(record))
+  })
+
+  app.post('/addPlayerToRace', (req, res) => {
+    console.log(req.body)
+    return insertPlayerRace(req.body)
+    .then(record => res.json(record))
+  })
+
   app.get('/courses', (req, res) => {
     db.all(
-      `SELECT * 
-        from races
-        join players_has_races on players_has_races.race_id = races.id
-        join members on members.id = players_has_races.player_id
+      `SELECT races.id as race_id, races.date, members.id as player_id, position, name, nickname, image
+      from races
+      left join players_has_races on players_has_races.race_id = races.id
+      left join members on members.id = players_has_races.player_id
       `
     )
     .then(records => {
-    
       const racesPlayers = records.map(
         race => ({
           id: race.race_id,
@@ -109,7 +130,7 @@
           acc[race.id] = {
             id: race.id,
             date: race.date,
-            players: [race.player]
+            players: race.player.id ? [race.player] : []
           }
         } else {
           acc[race.id].players = [
@@ -119,8 +140,8 @@
         }
         return acc
       }, {})
-
       return res.json(Object.values(racesPlayers))
+
     })
 
   })
