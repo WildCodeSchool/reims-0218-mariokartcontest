@@ -124,6 +124,7 @@ const controllers = {
                   },
                   body: JSON.stringify(addPlayerToRaceData)
                 },
+                 window.location = "/calendrier"
                 )
                 })
               }
