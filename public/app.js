@@ -1,5 +1,8 @@
+import makePlayer from './players.js'
+import makeRace from './race.js'
+import makeClassement from './classement.js'
 const mainDiv = document.getElementById('main')
-
+ 
 const render = html => {
   mainDiv.innerHTML = html
 }
@@ -25,58 +28,11 @@ const navbar = `
   </div>
 </nav>`
 
-const makeCard = item => `
-  <div class="col-12 col-md-3">
-    <div class="card mb-4 box-shadow">
-    <img class="card-img-top" src="${item.image}" alt="avatar" />
-      <div class="card-body">
-        <p class="card-text">${item.nickname}'s profile</p>
-      </div>
-    </div>
-  </div>`
-
-const makeRaceCard = race => {
-  let liste = `<ul>`
-      for (let i = 0 ; i < race.players.length ; i++){
-      //renvoi la lite des players dans la card
-        liste += `<li>${race.players[i].name}</li>`
-      }
-
-return `
-<div class="col-12 col-md-4">
-  <div class="card mb-4 box-shadow">
-    <div class="card-body">
-      <p>${race.date}</p>
-      <p>${liste}</p>
-      <div class"mr-3">
-      <button type="button" class="btn btn-outline-info add-player" data-race-id="${race.id}">Ajout joueurs</button>
-      </div>
-      </div>
-  </div>
-</div>`}
-  // parcourir race.players pour faire une liste html
-  const makeClassement = race => {
-    let liste = `<ul>`
-      for (let i = 0 ; i < race.players.length ; i++){
-      //renvoi la lite des players dans la card
-        liste += `<li> Classement de ${race.players[i].name} : ${race.players[i].position}</li>`
-      }
-
-  return `
-  <div class="col-12 col-md-4">
-    <div class="card mb-4 box-shadow">
-      <div class="card-body">
-        <p class="card-text">${race.date}</p>
-        <p class="card-text">${liste}</p>
-      </div>
-    </div>
-  </div>`}
-
 const serializeForm = form => {
   const data = {}
   console.log(data)
   const elements = form.getElementsByClassName('form-control')
-  for(el of elements) {
+  for(let el of elements) {
     data[el.name] = el.value
   }
   return data
@@ -86,7 +42,7 @@ const controllers = {
   '/': () =>
     fetch('/members')
     .then(res => res.json())
-    .then(members => members.reduce((carry, member) => carry + makeCard(member),''))
+    .then(members => members.reduce((carry, member) => carry + makePlayer(member),''))
     .then(album => render(
       `${navbar}
       <div class="container">
@@ -100,7 +56,7 @@ const controllers = {
     '/calendrier': () =>
       fetch('/courses')
       .then(res => res.json())
-      .then(races => races.reduce((carry, race) => carry + makeRaceCard(race),''))
+      .then(races => races.reduce((carry, race) => carry + makeRace(race),''))
       .then(gpCard => {
         render(
           `
@@ -146,7 +102,8 @@ const controllers = {
             .then(res => res.json())
             .then(members => {
               let liste = ""
-              for ( member of members){
+              for ( let member of members){
+                console.log (members)
                 liste += `<li class="select-player" data-member-id="${member.id}">${member.name}</li>`
               }
               const addPlayerModal = document.getElementById('add-player-modal')
@@ -251,73 +208,73 @@ const controllers = {
           <div class="form-group">
             <label for="inputName">Prénom</label>
             <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prénom">
+        </div>
+        <div class="form-group">
+          <label for="inputNickname">Pseudo</label>
+          <input name="nickname" type="text" class="form-control" id="inputNickname" placeholder="Entrez votre pseudo">
+        </div>
+          <p>Choisissez votre équipe</br></p>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input form-control"  type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">TEAM WILD</label>
           </div>
-          <div class="form-group">
-            <label for="inputNickname">Pseudo</label>
-            <input name="nickname" type="text" class="form-control" id="inputNickname" placeholder="Entrez votre pseudo">
-          </div>
-            <p>Choisissez votre équipe</br></p>
           <div class="form-check form-check-inline">
-              <input class="form-check-input form-control"  type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-              <label class="form-check-label" for="inlineRadio1">TEAM WILD</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input form-control" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">TEAM CAPSULE</label>
-            </div>
-            <div class="form-group">
-            <label for="inputImageUrl">Image URL</label>
-            <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
+            <input class="form-check-input form-control" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">TEAM CAPSULE</label>
           </div>
           <div class="form-group">
-            <label for="inputEmail">Email</label>
-            <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
-          </div>
-          <div class="form-group">
-            <label for="inputPassword">Mot de passe</label>
-            <input name="motDePasse" type="password" class="form-control" id="inputPassword" placeholder="Saisissez votre mot de passe">
-          </div>
-          <button type="submit" class="btn btn-primary">S'enregistrer</button>
-        </form>
-      </div>`
+          <label for="inputImageUrl">Image URL</label>
+          <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
+        </div>
+        <div class="form-group">
+          <label for="inputEmail">Email</label>
+          <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword">Mot de passe</label>
+          <input name="motDePasse" type="password" class="form-control" id="inputPassword" placeholder="Saisissez votre mot de passe">
+        </div>
+        <button type="submit" class="btn btn-primary">S'enregistrer</button>
+      </form>
+    </div>`
     )
-      
-      //js du formulaire
-      const form = document.getElementById('add-member')
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        const data = serializeForm(form)
-        fetch('/members', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        })//appel cette fonction pour gérer les routes
-        .then(res => res.json())
-        .then(members => {
-          const alertBox = document.getElementById('alert-box')
-          alertBox.className = 'alert alert-success'
-          alertBox.innerHTML += `${members.name} est inscrit`
-          alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
-        })
-        window.setTimeout(() =>
-        { window.location = "/"; },3000);
+    
+    //js du formulaire
+    const form = document.getElementById('add-member')
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      const data = serializeForm(form)
+      fetch('/members', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })//appel cette fonction pour gérer les routes
+      .then(res => res.json())
+      .then(members => {
+        const alertBox = document.getElementById('alert-box')
+        alertBox.className = 'alert alert-success'
+        alertBox.innerHTML += `${members.name} est inscrit`
+        alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
       })
-    },
-    '/information': () => render(
-    `${navbar}
-      <div class="container">
-        <section class="jumbotron text-center">
-          <h1 class="jumbotron-heading">A propos</h1>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-          <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
-        </section>
-      </div>`
-    ),
+      window.setTimeout(() =>
+      { window.location = "/"; },3000);
+    })
+  },
+  '/information': () => render(
+  `${navbar}
+    <div class="container">
+      <section class="jumbotron text-center">
+        <h1 class="jumbotron-heading">A propos</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+        <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
+      </section>
+    </div>`
+  ),
 
-    '*': () => render('<h1>Not Found</h1>'),
+  '*': () => render('<h1>Not Found</h1>'),
 }
 
 const routing = () => {
