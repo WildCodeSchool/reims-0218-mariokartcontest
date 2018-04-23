@@ -63,10 +63,10 @@ const footer=`
                         <a href="https://github.com/WildCodeSchool/reims-0218-worldcuppronostics">world cup pronostics</a>
                     </li>
                     <li>
-                        <a href="https://github.com/WildCodeSchool/reims-0218-artezicreloaded">artezicreloaded</a>
+                        <a href="https://github.com/WildCodeSchool/reims-0218-artezicreloaded">artezic reloaded</a>
                     </li>
                     <li>
-                        <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">bookyourwilder</a>
+                        <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">book your wilder</a>
                     </li>
                     
                 </ul>
