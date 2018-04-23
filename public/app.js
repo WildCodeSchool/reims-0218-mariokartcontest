@@ -49,6 +49,17 @@ const controllers = {
           <h1 class="display-3">Welcome to Mario Kart Tournament !</h1>
           <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         </div>
+        <div class="card text-white bg-dark mb-3 mt-4" style="max-width: 75rem;">
+        <div class="card-body">
+          <h5 class="card-title">Reglement</h5>
+          <ul>
+          <li class="card-text">Un joueur doit participer à au moins 3 courses.</li>
+          <li class="card-text">Une course sera disputée par 4 joueurs maximum.</li>
+          <li class="card-text">Un classement sera etabli comme suit : 3 points pour le premier, 2 points pour le second et 1 point pour le troisieme.</li>
+          <li class="card-text"></li>
+          </ul>
+        </div>
+      </div>
         <div class="row">${album}</div>
       </div>`)
     ),
@@ -266,9 +277,47 @@ const controllers = {
     <div class="container">
       <section class="jumbotron text-center">
         <h1 class="jumbotron-heading">A propos</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+        <p class="lead text-muted"> Un site pour pouvoir s'inscrire et disputer des tournois de Mario Kart sur Nintendo 64 entre amis. <br/>
+        Nous sommes une équipe de 4 personnes qui aiment participer a des courses sur le jeu Mario Kart. <br/>
+        Par l'intermédiaire de ce site nous vous proposons de participer à des tournois ponctuels et de venir vous mesurer sur ce jeu. Que vous soyez debutant ou confirmé, venez passer le temps d'une soirée un moment convivial dans une ambiance festive.   </p>
+        <h4> Quelques mots sur le jeu</h4>
+        <p>Mario Kart est sans doute le jeu de course le plus prisé des jeunes joueurs, avec ses courses endiablées, au rythme des carapaces qui volent et de la tension permanente de se voir voler la première de la course au dernier moment. Débuté en 1992 avec Super Mario Kart sur Super Nintendo, la saga compte aujourd’hui son 8e opus, sorti en 2014 sur console Wii U.</p>
         <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
       </section>
+    </div>
+    <div class="card-group mx-4">
+      <div class="card mr-4">
+        <img class="card-img-top" src="https://www.nautiljon.com/images/jeuxvideo_persos/00/79/toad_1897.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Khalid <3</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"></p>
+        </div>
+      </div>
+      <div class="card mr-4">
+        <img class="card-img-top" src="https://img2.finalfantasyxiv.com/f/5852ad62305be28222035bf6c2e9d2a5_40d57ba713628f3f1ef5ef204b6d76d2fl0_640x873.jpg?1512791378" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">aNa</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text"></p>
+        </div>
+      </div>
+      <div class="card mr-4">
+        <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB14uRAQpXXXXX.XXXXq6xXFXXXa/Play-Arts-PA-Kai-Final-Fantasy-VII-FF7-Sephiroth-Action-Figure-PVC-Statue-25cm-high-no.jpg_640x640.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Antho</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <p class="card-text"></p>
+        </div>
+      </div>
+      <div class="card mr-4">
+        <img class="card-img-top" src="https://img00.deviantart.net/c6f2/i/2008/087/f/b/foxhound_icon_by_solidalexei.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Dorian</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <p class="card-text"></p>
+        </div>
+      </div>
     </div>`
   ),
 
