@@ -20,10 +20,7 @@ const navbar = `
         <a class="nav-link" href="/members/new">S'inscrire</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/members/new">Créer une course</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/members/new">S'inscrire</a>
+        <a class="nav-link" href="/race/new">Créer une course</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/calendrier">Calendrier</a>
