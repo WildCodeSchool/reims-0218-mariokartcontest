@@ -28,6 +28,69 @@ const navbar = `
   </div>
 </nav>`
 
+const footer=`
+
+
+<!--Footer-->
+<footer class="page-footer font-small blue pt-4 mt-4">
+
+    <!--Footer Links-->
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-4">
+                <h5 class="text-uppercase">Reseaux sociaux</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://github.com/WildCodeSchool/reims-0218-worldcuppronostics">Pronostics coupe du monde</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/WildCodeSchool/reims-0218-artezicreloaded">Artezik</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">Wild Book</a>
+                    </li>
+                    
+            </div>
+            <!--/.First column-->
+
+            <!--Second column-->
+            <div class="col-md-4">
+                <h5 class="text-uppercase">Links</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://github.com/WildCodeSchool/reims-0218-worldcuppronostics">Pronostics coupe du monde</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/WildCodeSchool/reims-0218-artezicreloaded">Artezik</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">Wild Book</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!--/.Second column-->
+            
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3 text-center">
+        © 2018 Copyright:
+        <a href="https://wildcodeschool.fr/"> Wild Code School </a>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+                      
+                      
+
+`
+
 const serializeForm = form => {
   const data = {}
   const elements = form.getElementsByClassName('form-control')
@@ -77,7 +140,7 @@ const controllers = {
               </div>
             </div>
           </div>  
-          ${navbar}
+          ${navbar}          
           <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Launch demo modal
           </button> --!>
@@ -87,7 +150,8 @@ const controllers = {
               <p></p>
               </div>
               <div class="row">${gpCard}</div>
-          </div>`
+          </div>
+          ${footer}`
         )
         // get all the btn addPlayer using document.getElementsByClass
         const addPlayerButtons = document.getElementsByClassName('add-player')
