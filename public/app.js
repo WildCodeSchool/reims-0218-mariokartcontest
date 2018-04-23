@@ -85,7 +85,6 @@ const controllers = {
             <div class="jumbotron">
               <h1 class="display-3">Calendrier</h1>
               <p></p>
-              <p><a class="btn btn-success btn-lg" href="/" role="button">Accueil</a></p>
               </div>
               <div class="row">${gpCard}</div>
           </div>`
@@ -143,7 +142,6 @@ const controllers = {
           <div class="jumbotron ImageClassement">
             <h1 class="display-3 titleClassement">Classement</h1>
             <p></p>
-            <p><a class="btn btn-success btn-lg boutonAcceuilClassement" href="/" role="button">Accueil</a></p>
             </div>
             <div class="row">${gpCard}</div>
         </div>`)
@@ -167,8 +165,6 @@ const controllers = {
         </form>
       </div>`
       )
-
-
       //js du formulaire création de course
       const form = document.getElementById('add-race')
       form.addEventListener('submit', e => {
