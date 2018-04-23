@@ -120,7 +120,7 @@ const controllers = {
         </div>
         <div class="row">${album}</div>
       </div>
-      ${footer}`)
+      `)
     ),
     '/calendrier': () =>
       fetch('/courses')
@@ -158,7 +158,7 @@ const controllers = {
               </div>
               <div class="row">${gpCard}</div>
           </div>
-          ${footer}`
+          `
         )
         // get all the btn addPlayer using document.getElementsByClass
         const addPlayerButtons = document.getElementsByClassName('add-player')
@@ -216,7 +216,7 @@ const controllers = {
             </div>
             <div class="row">${gpCard}</div>
         </div>
-        ${footer}`)
+        `)
     ),
 
     '/race/new': () => {
@@ -304,7 +304,7 @@ const controllers = {
         <button type="submit" class="btn btn-primary">S'enregistrer</button>
       </form>
     </div>
-    ${footer}`
+    `
     )
     
     //js du formulaire
@@ -340,7 +340,7 @@ const controllers = {
         <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
       </section>
     </div>
-    ${footer}`
+    `
   ),
 
   '*': () => render('<h1>Not Found</h1>'),
