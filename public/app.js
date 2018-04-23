@@ -236,7 +236,7 @@ const controllers = {
           <button type="submit" class="btn btn-primary">Créer votre course</button>
         </form>
       </div>
-      ${footer}`
+      `
       )
       //js du formulaire création de course
       const form = document.getElementById('add-race')

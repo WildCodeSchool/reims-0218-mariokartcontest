@@ -71,11 +71,11 @@
     <footer class="page-footer font-small blue pt-4 mt-4">
 
     <!--Footer Links-->
-    <div class="container-fluid text-center text-md-left">
+    <div class="container-fluid text-center ">
         <div class="row">
 
             <!--First column-->
-            <div class="col-md-4">
+            <div class="col-md-4 col-md-offset-2">
                 <h5 class="text-uppercase">Reseaux sociaux</h5>
                 <ul class="list-unstyled">
                     <li>
@@ -92,9 +92,9 @@
             <!--/.First column-->
 
             <!--Second column-->
-            <div class="col-md-4">
+            <div class="col-md-4 col-md-offset-2">
                 <h5 class="text-uppercase">Nos partenaires</h5>
-                <ul class="list-unstyled">
+                <ul class="list-unstyled ">
                     <li>
                         <a href="https://github.com/WildCodeSchool/reims-0218-worldcuppronostics">world cup pronostics</a>
                     </li>
@@ -120,7 +120,7 @@
     </div>
     <!--/.Copyright-->
 
-</footer>
+    </footer>
     </body>
   </html>`
 
