@@ -43,13 +43,13 @@ const footer=`
                 <h5 class="text-uppercase">Reseaux sociaux</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="https://github.com/WildCodeSchool/reims-0218-worldcuppronostics">Pronostics coupe du monde</a>
+                        <img src="http://www.grez-doiceau.be/ma-commune/social/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" width="50" height="50" alt="" <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder" >Facebook</a>
                     </li>
                     <li>
-                        <a href="https://github.com/WildCodeSchool/reims-0218-artezicreloaded">Artezik</a>
+                        <img src="http://www.medias-catholiques.fr/images/twitter/image" width="50" height="50" alt="" <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">Twitter</a>
                     </li>
                     <li>
-                        <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">Wild Book</a>
+                    <img src="https://www.shareicon.net/data/128x128/2017/06/28/888033_logo_512x512.png" width="50" height="50" alt="" <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">Linkedin</a>
                     </li>
                     
             </div>
@@ -57,16 +57,16 @@ const footer=`
 
             <!--Second column-->
             <div class="col-md-4">
-                <h5 class="text-uppercase">Links</h5>
+                <h5 class="text-uppercase">Nos partenaires</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="https://github.com/WildCodeSchool/reims-0218-worldcuppronostics">Pronostics coupe du monde</a>
+                        <a href="https://github.com/WildCodeSchool/reims-0218-worldcuppronostics">world cup pronostics</a>
                     </li>
                     <li>
-                        <a href="https://github.com/WildCodeSchool/reims-0218-artezicreloaded">Artezik</a>
+                        <a href="https://github.com/WildCodeSchool/reims-0218-artezicreloaded">artezicreloaded</a>
                     </li>
                     <li>
-                        <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">Wild Book</a>
+                        <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">bookyourwilder</a>
                     </li>
                     
                 </ul>
@@ -113,7 +113,8 @@ const controllers = {
           <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         </div>
         <div class="row">${album}</div>
-      </div>`)
+      </div>
+      ${footer}`)
     ),
     '/calendrier': () =>
       fetch('/courses')
@@ -208,7 +209,8 @@ const controllers = {
             <p></p>
             </div>
             <div class="row">${gpCard}</div>
-        </div>`)
+        </div>
+        ${footer}`)
     ),
 
     '/race/new': () => {
@@ -227,7 +229,8 @@ const controllers = {
 
           <button type="submit" class="btn btn-primary">Créer votre course</button>
         </form>
-      </div>`
+      </div>
+      ${footer}`
       )
       //js du formulaire création de course
       const form = document.getElementById('add-race')
@@ -294,7 +297,8 @@ const controllers = {
         </div>
         <button type="submit" class="btn btn-primary">S'enregistrer</button>
       </form>
-    </div>`
+    </div>
+    ${footer}`
     )
     
     //js du formulaire
@@ -329,7 +333,8 @@ const controllers = {
         <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
         <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
       </section>
-    </div>`
+    </div>
+    ${footer}`
   ),
 
   '*': () => render('<h1>Not Found</h1>'),
