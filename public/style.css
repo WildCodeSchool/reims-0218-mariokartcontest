@@ -16,20 +16,30 @@
 }
 
 .wallpaper{
-    background-image: url("https://www.wallpapersbrowse.com/images/xo/xosuwnq.png");
+    background-image: url("http://www.clique.tv/wp-content/uploads/2018/02/Mario-kart-8-deluxe.jpg");
     background-size: cover;
     margin-top: 20px;
-    opacity: 0.5;
+    opacity: 1;
     font-size:  1.5em;
     vertical-align: text-top;
 
 }
 
 .display-3{
-    color: black;
+    color: white;
     text-align: center;
+    margin-top: 20px;
     font-size:  3em;
     opacity: 1;
+}
+
+.display-4{
+    text-align: right;
+}
+
+.calendar{
+    background-size: cover;
+    max-width: 1080px;
 }
 
 .ImageClassement {

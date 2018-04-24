@@ -116,7 +116,7 @@ const controllers = {
       <div class="container">
         <div class="jumbotron wallpaper">
           <h1 class="display-3">Welcome to Mario Kart Tournament !</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+          <p></p>
         </div>
         <div class="row">${album}</div>
       </div>
@@ -153,7 +153,8 @@ const controllers = {
           </button> --!>
           <div class="container">
             <div class="jumbotron">
-              <h1 class="display-3">Calendrier</h1>
+              <h1 class="display-4">Calendrier</h1>
+              <img src="https://www.rostercon.com/wp-content/uploads/2014/12/super-mario-kart-calendrier-avent-jeux-video.jpg" class="calendar" />
               <p></p>
               </div>
               <div class="row">${gpCard}</div>
