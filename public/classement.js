@@ -6,7 +6,7 @@ const makeClassement = classement => {
     lis += makePlayerListClassement(player)
   }
   return `
-  <div class="col-12 col-md-3">
+  <div class="col-12 col-md-4">
     <div class="card mb-4 box-shadow">
       <div class="card-body">
       <p class="card-text">${classement.date}</p>
