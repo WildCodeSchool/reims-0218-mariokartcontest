@@ -293,7 +293,6 @@ const routing = () => {
     '/race/new',
     '/calendrier',
     '/classement',
-    '/auth',
     '*'
   ]
   routes.forEach(
