@@ -6,10 +6,14 @@
   const racesSeed = require('./public/races.json')
   const playersHasRacesSeed = require('./public/players_has_races.json') 
   const app = express()
+  require('./passport-strategy')
+  
+  const auth = require ('./auth')
   let db
 
   app.use(express.static('public'))
   app.use(bodyParser.json())
+  app.use('/auth', auth)
 
   const insertMember = m => {
     const { image, name, nickname, email, password, } = m
