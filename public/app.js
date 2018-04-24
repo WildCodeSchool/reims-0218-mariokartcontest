@@ -34,68 +34,7 @@ const navbar = `
   </div>
 </nav>`
 
-const footer=`
 
-
-<!--Footer-->
-<footer class="page-footer font-small blue pt-4 mt-4">
-
-    <!--Footer Links-->
-    <div class="container-fluid text-center text-md-left">
-        <div class="row">
-
-            <!--First column-->
-            <div class="col-md-4">
-                <h5 class="text-uppercase">Reseaux sociaux</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <img src="http://www.grez-doiceau.be/ma-commune/social/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" width="50" height="50" alt="" <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder" >Facebook</a>
-                    </li>
-                    <li>
-                        <img src="http://www.medias-catholiques.fr/images/twitter/image" width="50" height="50" alt="" <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">Twitter</a>
-                    </li>
-                    <li>
-                    <img src="https://www.shareicon.net/data/128x128/2017/06/28/888033_logo_512x512.png" width="50" height="50" alt="" <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">Linkedin</a>
-                    </li>
-                    
-            </div>
-            <!--/.First column-->
-
-            <!--Second column-->
-            <div class="col-md-4">
-                <h5 class="text-uppercase">Nos partenaires</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="https://github.com/WildCodeSchool/reims-0218-worldcuppronostics">world cup pronostics</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/WildCodeSchool/reims-0218-artezicreloaded">artezic reloaded</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">book your wilder</a>
-                    </li>
-                    
-                </ul>
-            </div>
-            <!--/.Second column-->
-            
-        </div>
-    </div>
-    <!--/.Footer Links-->
-
-    <!--Copyright-->
-    <div class="footer-copyright py-3 text-center">
-        © 2018 Copyright:
-        <a href="https://wildcodeschool.fr/"> Wild Code School </a>
-    </div>
-    <!--/.Copyright-->
-
-</footer>
-<!--/.Footer-->
-                      
-                      
-
-`
 
 const serializeForm = form => {
   const data = {}
@@ -120,7 +59,7 @@ const controllers = {
         </div>
         <div class="row">${album}</div>
       </div>
-      ${footer}`)
+      `)
     ),
     '/calendrier': () =>
       fetch('/courses')
@@ -158,7 +97,7 @@ const controllers = {
               </div>
               <div class="row">${gpCard}</div>
           </div>
-          ${footer}`
+          `
         )
         // get all the btn addPlayer using document.getElementsByClass
         const addPlayerButtons = document.getElementsByClassName('add-player')
@@ -216,7 +155,7 @@ const controllers = {
             </div>
             <div class="row">${gpCard}</div>
         </div>
-        ${footer}`)
+        `)
     ),
 
     '/race/new': () => {
@@ -236,7 +175,7 @@ const controllers = {
           <button type="submit" class="btn btn-primary">Créer votre course</button>
         </form>
       </div>
-      ${footer}`
+      `
       )
       //js du formulaire création de course
       const form = document.getElementById('add-race')
@@ -304,7 +243,7 @@ const controllers = {
         <button type="submit" class="btn btn-primary">S'enregistrer</button>
       </form>
     </div>
-    ${footer}`
+    `
     )
     
     //js du formulaire
@@ -340,7 +279,7 @@ const controllers = {
         <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
       </section>
     </div>
-    ${footer}`
+    `
   ),
 
   '*': () => render('<h1>Not Found</h1>'),
