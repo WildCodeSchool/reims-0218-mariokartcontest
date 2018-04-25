@@ -206,7 +206,7 @@ const controllers = {
       render(`
           ${navbar}
           <div class="container">
-          <div id="alert-box" class="hidden">
+          <div id="alert-login"></div>
           </div>
           <h2>Log In</h2>
           <form id="logInForm">
@@ -227,7 +227,7 @@ const controllers = {
         e.preventDefault()
           //data
           const data = serializeForm(logInForm)
-          console.log(data)
+           console.log(data)
 
           //POST sur le serveur /auth/login
           fetch('/auth/login', {
@@ -240,11 +240,15 @@ const controllers = {
           })
           .then(res => res.json())
           .then(data => {
+            const alert = document.getElementById('alert-login')
             if(!data.user) {
               //alert class danger
+              alert.innerHTML= `echec`
             } else {
               //store the token
+              alert.innerHTML= `${data.user.username} est connecté`
               localStorage.setItem('token', data.token)
+              logInForm.innerHTML=""
             }
           });
       });
