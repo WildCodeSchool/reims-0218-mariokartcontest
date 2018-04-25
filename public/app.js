@@ -220,6 +220,7 @@ const controllers = {
           </div>
           <button type="submit" class="btn btn-primary">Connexion</button>
           </form>
+          <div id="test">Click me</div>
       `)
 
       const logInForm = document.getElementById('logInForm')
@@ -248,10 +249,17 @@ const controllers = {
               //store the token
               alert.innerHTML= `${data.user.username} est connecté`
               localStorage.setItem('token', data.token)
-              logInForm.innerHTML=""
+              logInForm.style.display= 'none'
             }
           });
       });
+      document.getElementById('test').addEventListener('click', () => {
+        const token = localStorage.getItem('token')
+        console.log(token)
+        fetch('test')
+        .then(res => res.json())
+        .catch(err => console.log(err))
+      })
     },
     
     '/members/new': () => {
