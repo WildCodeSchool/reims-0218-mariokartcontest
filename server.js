@@ -25,7 +25,7 @@
 
   //date format YYYY-MM-DD HH:MM:SS.SSS
   const insertRace = r => {
-    const { date, } = r
+    const { date } = r
     return db.get('INSERT INTO races(date) VALUES(?)', date)
     .then(() => db.get('SELECT last_insert_rowid() as id'))
     .then(({ id }) => db.get('SELECT * from races WHERE id = ?', id))
@@ -49,9 +49,12 @@
   .then(() => Promise.map(racesSeed, r => insertRace(r)))
   .then(() => Promise.map(playersHasRacesSeed, pr => insertPlayerRace(pr).then(pr => console.log(`player classement ${pr.race_id}`))))
     
-
-
-
+  //update a position 
+  const updatePosition = up => {
+    const { race_id, player_id, position } = up
+    return db.get('UPDATE players_has_races SET position=? WHERE race_id=? AND player_id=?', position, race_id, player_id)
+    .then(() => db.get('SELECT * from players_has_races'))
+  }
 
   const html = `
   <!doctype html>
@@ -125,12 +128,19 @@
     })
   })
 
-
-
   //CREATE
   app.post('/members', (req, res) => {
     return insertMember(req.body)
     .then(record => res.json(record))
+  })
+  //UPDATE POSITION
+  app.put('/courses', (req, res) => {
+    console.log(req)
+    return updatePosition(req.body)
+    
+    .then(setPosition => {
+      res.json(setPosition)
+    })
   })
 
   app.post('/race', (req, res) => {
