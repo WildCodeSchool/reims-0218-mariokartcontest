@@ -146,6 +146,7 @@
       from races
       left join players_has_races on players_has_races.race_id = races.id
       left join members on members.id = players_has_races.player_id
+      order by position 
       `
     )
     .then(records => {
@@ -170,8 +171,8 @@
           }
         } else {
           acc[race.id].players = [
-            race.player,
-            ...acc[race.id].players
+            ...acc[race.id].players,
+            race.player
           ]
         }
         return acc
