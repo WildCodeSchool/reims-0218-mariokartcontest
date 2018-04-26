@@ -133,6 +133,7 @@ const controllers = {
                   position: 0
                 }
                 // pass the adminToken
+                $(tokenAdmin() ?
                 fetch('/addPlayerToRace', {
                   method: 'POST',
                   headers: {
@@ -143,10 +144,12 @@ const controllers = {
                 },
                  window.location = "/calendrier"
                 )
+                :'')
                 })
               }
             })
             $(addPlayerModal).modal('show')
+          
           })
         }
       }),
