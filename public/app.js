@@ -133,7 +133,7 @@ const controllers = {
                   },
                   body: JSON.stringify(addPlayerToRaceData)
                 },
-                 window.location = "/calendrier"
+                window.location = "/calendrier"
                 )
                 })
               }
@@ -146,7 +146,8 @@ const controllers = {
       fetch('/courses')
       .then(res => res.json())
       .then(races => races.reduce((carry, race) => carry + makeClassement(race),''))
-      .then(gpCard => render(
+      .then(gpCard => {
+        render(
         `${navbar}
         <div class="container">
           <div class="jumbotron ImageClassement">
@@ -156,6 +157,34 @@ const controllers = {
             <div class="row">${gpCard}</div>
         </div>
         `)
+        // document.get...
+        const buttonPositions = document.getElementsByClassName('add-position')
+        for (let buttonPosition of buttonPositions) {
+          //console.log(buttonPosition)
+          buttonPosition.addEventListener('click', () => {
+            const raceId = buttonPosition.dataset.raceId
+            const playerId = buttonPosition.dataset.playerId
+            const position = buttonPosition.dataset.position
+            console.log(raceId, playerId, position)
+            const addPositionToData = {
+              race_id: raceId,
+              player_id: playerId,
+              position: position
+            }
+            fetch('/courses', {
+              method: 'PUT',
+              headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(addPositionToData)
+            },
+           // window.location = "/calendrier"
+            )
+            
+          })
+        }
+      }
     ),
 
     '/race/new': () => {
@@ -170,8 +199,6 @@ const controllers = {
           <label for="inputdate">Date de la course (YYYY-MM-DD HH:MM:SS.SSS)</label>
             <input name="date" type="text" class="form-control" id="inputFirstName" placeholder="YYYY-MM-DD HH:MM:SS.SSS">
           </div>
-          
-
           <button type="submit" class="btn btn-primary">Créer votre course</button>
         </form>
       </div>

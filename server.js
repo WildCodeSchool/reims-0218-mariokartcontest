@@ -48,7 +48,7 @@
   //update a position 
   const updatePosition = up => {
     const { race_id, player_id, position } = up
-    return db.get('UPDATE players_has_races SET position=?', position)
+    return db.get('UPDATE players_has_races SET position=? WHERE race_id=? AND player_id=?', position, race_id, player_id)
     .then(() => db.get('SELECT * from players_has_races'))
   }
 
@@ -131,10 +131,11 @@
   })
   //UPDATE POSITION
   app.put('/courses', (req, res) => {
+    console.log(req)
     return updatePosition(req.body)
+    
     .then(setPosition => {
       res.json(setPosition)
-      console.log(setPosition)
     })
   })
 
