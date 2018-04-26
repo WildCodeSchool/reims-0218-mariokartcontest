@@ -1,3 +1,5 @@
+import { tokenAdmin } from './utils.js'
+
 export const navbar = `
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">
@@ -25,6 +27,10 @@ export const navbar = `
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/information">A propos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin">Admin</a>
+      </li>
     </ul>
   </div>
 </nav>`
