@@ -7,6 +7,9 @@ const render = html => {
   mainDiv.innerHTML = html
 }
 
+
+const tokenAdmin = () => localStorage.getItem('token')
+
 const navbar = `
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">
@@ -19,9 +22,13 @@ const navbar = `
     <li class="nav-item">
         <a class="nav-link" href="/members/new">S'inscrire</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/race/new">Créer une course</a>
-      </li>
+      ${
+        tokenAdmin() ?
+        `<li class="nav-item">
+          <a class="nav-link" href="/race/new">Créer une course</a>
+        </li>`
+        : ''
+      }
       <li class="nav-item">
         <a class="nav-link" href="/calendrier">Calendrier</a>
       </li>
@@ -125,6 +132,7 @@ const controllers = {
                   player_id: playerId,
                   position: 0
                 }
+                // pass the adminToken
                 fetch('/addPlayerToRace', {
                   method: 'POST',
                   headers: {
