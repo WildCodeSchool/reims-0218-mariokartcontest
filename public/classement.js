@@ -1,5 +1,6 @@
+import { tokenAdmin } from './utils.js'
+
 export const makePlayerListClassement = (playerListClassement, raceId) => {
-  console.log(playerListClassement.id, raceId)
   const choosePosition = `
     <button type="button" class="btn btn-outline-info add-position" data-position="1" data-player-id="${playerListClassement.id}" data-race-id="${raceId}">1</button>
     <button type="button" class="btn btn-outline-info add-position" data-position="2" data-player-id="${playerListClassement.id}" data-race-id="${raceId}">2</button>
@@ -8,7 +9,7 @@ export const makePlayerListClassement = (playerListClassement, raceId) => {
   `
 
   return `<li>Classement de ${playerListClassement.nickname} : ${playerListClassement.position}
-  </br> ${choosePosition}
+  </br> ${tokenAdmin() ? `${choosePosition}` :''}
   </li>`
 }
 
