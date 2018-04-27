@@ -85,78 +85,10 @@ const controllers = {
 
     '/race/new': newRace,
 
-    '/admin': () => {
-      render(`${admin}`)
-
-      const logInForm = document.getElementById('logInForm')
-      logInForm.addEventListener('submit', e => {
-        e.preventDefault()
-          //data
-          const data = serializeForm(logInForm)
-           console.log(data)
-
-          //POST sur le serveur /auth/login
-          fetch('/auth/login', {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json, text/plain, */*',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-          })
-          .then(res => res.json())
-          .then(data => {
-            const alert = document.getElementById('alert-login')
-            if(!data.user) {
-              //alert class danger
-              alert.innerHTML= `echec`
-            } else {
-              //store the token
-              alert.innerHTML= `${data.user.username} est connecté`
-              localStorage.setItem('token', data.token)
-              logInForm.style.display= 'none'
-            }
-          });
-      });
-      document.getElementById('test').addEventListener('click', () => {
-        const token = localStorage.getItem('token')
-        console.log(token)
-        fetch('test')
-        .then(res => res.json())
-        .catch(err => console.log(err))
-      })
-    },
+    '/admin': admin,
     
-    '/members/new': () => {
-      //construit le formulaire
-      render(
-      `${formulaire}`
-    )
+    '/members/new': formulaire,
     
-    //js du formulaire
-    const form = document.getElementById('add-member')
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      const data = serializeForm(form)
-      fetch('/members', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json, text/plain, */*',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })//appel cette fonction pour gérer les routes
-      .then(res => res.json())
-      .then(members => {
-        const alertBox = document.getElementById('alert-box')
-        alertBox.className = 'alert alert-success'
-        alertBox.innerHTML += `${members.name} est inscrit`
-        alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
-      })
-      window.setTimeout(() =>
-      { window.location = "/"; },3000);
-    })
-  },
   '/information': () => render(
   `${navbar}
     <div class="container">

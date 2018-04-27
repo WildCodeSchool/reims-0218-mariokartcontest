@@ -1,7 +1,9 @@
 import navbar from './navbar.js'
+import { render } from './utils.js'
+import { serializeForm } from './utils.js'
 
-export const formulaire = `
-${navbar}
+export const formulaire = () => {
+  render(` ${navbar}
       <div class="container">
         <div id="alert-box" class="hidden">
         </div>
@@ -38,6 +40,32 @@ ${navbar}
         </div>
         <button type="submit" class="btn btn-primary">S'enregistrer</button>
       </form>
-    </div>`
+    </div>`)
+
+    //js du formulaire
+    const form = document.getElementById('add-member')
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      const data = serializeForm(form)
+      fetch('/members', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })//appel cette fonction pour gérer les routes
+      .then(res => res.json())
+      .then(members => {
+        const alertBox = document.getElementById('alert-box')
+        alertBox.className = 'alert alert-success'
+        alertBox.innerHTML += `${members.name} est inscrit`
+        alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
+      })
+      window.setTimeout(() =>
+      { window.location = "/"; },3000);
+    })
+  
+    }
 
 export default formulaire
