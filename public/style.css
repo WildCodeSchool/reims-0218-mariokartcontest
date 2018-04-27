@@ -44,3 +44,29 @@
     margin-left: 7em;
     margin-top: 10em;
 }
+
+.list-unstyled li{
+    display: table-cell;
+    width:  50;
+    height: 50;
+}
+
+.list-unstyled{
+    margin: 0;
+}
+
+/*footer{
+
+   
+    
+    position:absolute;
+    
+    bottom:0 ;
+    
+    width:100%;
+    
+    padding-top:50px;
+    
+    height:150px;
+    
+    }*/
