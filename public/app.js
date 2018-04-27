@@ -5,6 +5,7 @@ import calendrier from './calendrier.js';
 import formulaire from './formulaire.js'
 import admin from './admin.js'
 import newRace from './newrace.js'
+import information from './information.js'
 const mainDiv = document.getElementById('main')
  
 const render = html => {
@@ -89,17 +90,7 @@ const controllers = {
     
     '/members/new': formulaire,
     
-  '/information': () => render(
-  `${navbar}
-    <div class="container">
-      <section class="jumbotron text-center">
-        <h1 class="jumbotron-heading">A propos</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-        <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
-      </section>
-    </div>
-    `
-  ),
+  '/information': information,
 
   '*': () => render('<h1>Not Found</h1>'),
 }
