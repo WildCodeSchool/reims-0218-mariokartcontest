@@ -270,6 +270,7 @@ const controllers = {
         fetch('test')
         .then(res => res.json())
         .catch(err => console.log(err))
+        localStorage.removeItem('token')
       })
     },
     
