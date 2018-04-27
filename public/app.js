@@ -8,7 +8,7 @@ const render = html => {
 }
 
 const navbar = `
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="/">
   <img src="https://78.media.tumblr.com/cdcb363107631b897d58050707df8859/tumblr_ou4ju4oOZy1w76j7uo6_400.gif" width="50" height="50" alt="">Mario Kart Contest</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,13 +52,15 @@ const controllers = {
     .then(members => members.reduce((carry, member) => carry + makePlayer(member),''))
     .then(album => render(
       `${navbar}
-      <div class="container">
-        <div class="jumbotron wallpaper">
-          <h1 class="display-3">Welcome to Mario Kart Tournament !</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      <section class="aspiFion"
+        <div class="container-fluid pageMembers">
+          <div class="jumbotron pageMembers wallpaper">
+            <h1 class="display-3">Welcome to Mario Kart Contest !</h1>
+            <p></p>
+          </div>
+          <div class="row">${album}</div>
         </div>
-        <div class="row">${album}</div>
-      </div>
+      </section>
       `)
     ),
     '/calendrier': () =>
@@ -91,8 +93,8 @@ const controllers = {
             Launch demo modal
           </button> --!>
           <div class="container">
-            <div class="jumbotron">
-              <h1 class="display-3">Calendrier</h1>
+            <div class="jumbotron calendrier">
+              <h1 class="display-4 titreCalendrier">Calendrier</h1>
               <p></p>
               </div>
               <div class="row">${gpCard}</div>
@@ -199,7 +201,7 @@ const controllers = {
           <label for="inputdate">Date de la course (YYYY-MM-DD HH:MM:SS.SSS)</label>
             <input name="date" type="text" class="form-control" id="inputFirstName" placeholder="YYYY-MM-DD HH:MM:SS.SSS">
           </div>
-          <button type="submit" class="btn btn-primary">Créer votre course</button>
+          <button type="submit" class="btn buttonInscription">Créer votre course</button>
         </form>
       </div>
       `
@@ -233,7 +235,7 @@ const controllers = {
       //construit le formulaire
       render(
       `${navbar}
-      <div class="container">
+      <div class="container memberNew">
         <div id="alert-box" class="hidden">
         </div>
         <h2>Inscription pour le tournoi !</h2>
@@ -267,7 +269,7 @@ const controllers = {
           <label for="inputPassword">Mot de passe</label>
           <input name="motDePasse" type="password" class="form-control" id="inputPassword" placeholder="Saisissez votre mot de passe">
         </div>
-        <button type="submit" class="btn btn-primary">S'enregistrer</button>
+        <button  type="submit" class="btn  buttonInscription">S'enregistrer</button>
       </form>
     </div>
     `
