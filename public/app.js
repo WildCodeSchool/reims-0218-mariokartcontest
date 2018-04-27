@@ -2,6 +2,8 @@ import makePlayer from './players.js'
 import makeRace from './race.js'
 import makeClassement from './classement.js'
 import navbar from './navbar.js'
+import routeCalendrier from './calendrier.js';
+import formulaire from './formulaire.js'
 const mainDiv = document.getElementById('main')
  
 const render = html => {
@@ -38,38 +40,15 @@ const controllers = {
       .then(res => res.json())
       .then(races => races.reduce((carry, race) => carry + makeRace(race),''))
       .then(gpCard => {
-        render(
-          `
-          <div class="modal fade" id="addPlayerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div id="add-player-modal" class="modal-body">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>  
-          ${navbar}          
-          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch demo modal
-          </button> --!>
-          <div class="container">
+        render(`
+        ${routeCalendrier}
+        <div class="container">
             <div class="jumbotron">
               <h1 class="display-3">Calendrier</h1>
               <p></p>
               </div>
               <div class="row">${gpCard}</div>
-          </div>
-          `
+          </div>`
         )
         // get all the btn addPlayer using document.getElementsByClass
         const addPlayerButtons = document.getElementsByClassName('add-player')
@@ -265,45 +244,7 @@ const controllers = {
     '/members/new': () => {
       //construit le formulaire
       render(
-      `${navbar}
-      <div class="container">
-        <div id="alert-box" class="hidden">
-        </div>
-        <h2>Inscription pour le tournoi !</h2>
-        <form id="add-member">
-          <div class="form-group">
-            <label for="inputName">Prénom</label>
-            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prénom">
-        </div>
-        <div class="form-group">
-          <label for="inputNickname">Pseudo</label>
-          <input name="nickname" type="text" class="form-control" id="inputNickname" placeholder="Entrez votre pseudo">
-        </div>
-          <p>Choisissez votre équipe</br></p>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input form-control"  type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            <label class="form-check-label" for="inlineRadio1">TEAM WILD</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input form-control" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-            <label class="form-check-label" for="inlineRadio2">TEAM CAPSULE</label>
-          </div>
-          <div class="form-group">
-          <label for="inputImageUrl">Image URL</label>
-          <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
-        </div>
-        <div class="form-group">
-          <label for="inputEmail">Email</label>
-          <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
-        </div>
-        <div class="form-group">
-          <label for="inputPassword">Mot de passe</label>
-          <input name="motDePasse" type="password" class="form-control" id="inputPassword" placeholder="Saisissez votre mot de passe">
-        </div>
-        <button type="submit" class="btn btn-primary">S'enregistrer</button>
-      </form>
-    </div>
-    `
+      `${formulaire}`
     )
     
     //js du formulaire
