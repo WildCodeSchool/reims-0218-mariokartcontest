@@ -181,8 +181,6 @@ const controllers = {
           <label for="inputdate">Date de la course (YYYY-MM-DD HH:MM:SS.SSS)</label>
             <input name="date" type="text" class="form-control" id="inputFirstName" placeholder="YYYY-MM-DD HH:MM:SS.SSS">
           </div>
-          
-
           <button type="submit" class="btn btn-primary">Créer votre course</button>
         </form>
       </div>
@@ -263,13 +261,14 @@ const controllers = {
             } else {
               //store the token
               alert.innerHTML=`<div class="alert alert-success" role="alert">
-                                This is a success alert—check it out!
+                                Vous etes connecté. Have a nice day !!!
                               </div>`
               localStorage.setItem('token', data.token)
               logInForm.style.display= 'none'
-              page('/', 3000) // setting the path
-              page() // starting the redirection
+              
+              page('/', 300) // setting the path
               window.location= '/'
+              
             }
           });
           
