@@ -66,9 +66,9 @@
       <footer class="page-footer font-small blue pt-4 mt-4">
       <div class="container-fluid text-center text-md-left">
         <div class="row justify-content-center text-center">
-          <div class="col-md-4">
-            <h5 class="text-uppercase">Suivez nous</h5>
-            <ul class="list-unstyled">
+          <div class="col-md-4S">
+          <h5 class="text-uppercase">Suivez nous</h5>
+            <ul class="list-unstyled">         
               <li>
                 <a href="https://fr-fr.facebook.com/wildcodeschool/" ><img src="http://www.grez-doiceau.be/ma-commune/social/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" width="50" height="50" /> </a>
               </li>
