@@ -1,52 +1,25 @@
-import makePlayer from './players.js'
 import navbar from './navbar.js'
 import calendrier from './calendrier.js';
 import formulaire from './formulaire.js'
 import admin from './admin.js'
+import contestant from './contestant.js'
 import newRace from './newrace.js'
 import information from './information.js'
 import classementRoute  from './classementroute.js';
-const mainDiv = document.getElementById('main')
- 
-const render = html => {
-  mainDiv.innerHTML = html
-}
-
-const serializeForm = form => {
-  const data = {}
-  const elements = form.getElementsByClassName('form-control')
-  for(let el of elements) {
-    data[el.name] = el.value
-  }
-  return data
-}
 
 const controllers = {
-  '/': () =>
-    fetch('/members')
-    .then(res => res.json())
-    .then(members => members.reduce((carry, member) => carry + makePlayer(member),''))
-    .then(album => render(
-      `${navbar}
-      <div class="container">
-        <div class="jumbotron wallpaper">
-          <h1 class="display-3">Welcome to Mario Kart Tournament !</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        </div>
-        <div class="row">${album}</div>
-      </div>
-      `)
-    ),
-    '/calendrier': calendrier
-    ,
-    '/classement': classementRoute,
+  '/': contestant,
 
-    '/race/new': newRace,
+  '/calendrier': calendrier,
 
-    '/admin': admin,
-    
-    '/members/new': formulaire,
-    
+  '/classement': classementRoute,
+
+  '/race/new': newRace,
+
+  '/admin': admin,
+  
+  '/members/new': formulaire,
+  
   '/information': information,
 
   '*': () => render('<h1>Not Found</h1>'),
