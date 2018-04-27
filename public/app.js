@@ -1,5 +1,4 @@
 import makePlayer from './players.js'
-import makeRace from './race.js'
 import makeClassement from './classement.js'
 import navbar from './navbar.js'
 import calendrier from './calendrier.js';
@@ -36,65 +35,8 @@ const controllers = {
       </div>
       `)
     ),
-    '/calendrier': () =>
-      fetch('/courses')
-      .then(res => res.json())
-      .then(races => races.reduce((carry, race) => carry + makeRace(race),''))
-      .then(gpCard => {
-        render(`
-        ${calendrier}
-        <div class="container">
-            <div class="jumbotron">
-              <h1 class="display-3">Calendrier</h1>
-              <p></p>
-              </div>
-              <div class="row">${gpCard}</div>
-          </div>`
-        )
-        // get all the btn addPlayer using document.getElementsByClass
-        const addPlayerButtons = document.getElementsByClassName('add-player')
-        const addPlayerModal = document.getElementById('addPlayerModal')
-        for (let addPlayerButton of addPlayerButtons) {
-          addPlayerButton.addEventListener("click", () =>  {
-            // ici récupérer race Id 
-            const raceId = addPlayerButton.dataset.raceId
-            fetch('/members')
-            .then(res => res.json())
-            .then(members => {
-              let liste = ""
-              for ( let member of members){
-                liste += `<li class="select-player" data-member-id="${member.id}">${member.name}</li>`
-              }
-              const addPlayerModal = document.getElementById('add-player-modal')
-              addPlayerModal.innerHTML = `<ul>${liste}</ul>`
-              const selectPlayers = document.getElementsByClassName('select-player')
-              for ( let selectPlayer of selectPlayers) {
-                selectPlayer.addEventListener('click', () => {
-                 const playerId = selectPlayer.dataset.memberId
-                  // récupérer player id
-                const addPlayerToRaceData = {
-                  race_id: raceId,
-                  player_id: playerId,
-                  position: 0
-                }
-                // pass the adminToken
-                fetch('/addPlayerToRace', {
-                  method: 'POST',
-                  headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify(addPlayerToRaceData)
-                },
-                window.location = "/calendrier"
-                )
-                })
-              }
-            })
-            $(addPlayerModal).modal('show')
-          })
-        }
-      }),
+    '/calendrier': calendrier
+      ,
     '/classement': () =>
       fetch('/courses')
       .then(res => res.json())
