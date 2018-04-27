@@ -1,6 +1,6 @@
 import navbar from './navbar.js'
 
-export const routeCalendrier = `
+export const calendrier = `
 <div class="modal fade" id="addPlayerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -25,4 +25,4 @@ ${navbar}
 </button> --!>
 `
 
-export default routeCalendrier
+export default calendrier

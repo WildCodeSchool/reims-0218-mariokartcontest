@@ -2,8 +2,9 @@ import makePlayer from './players.js'
 import makeRace from './race.js'
 import makeClassement from './classement.js'
 import navbar from './navbar.js'
-import routeCalendrier from './calendrier.js';
+import calendrier from './calendrier.js';
 import formulaire from './formulaire.js'
+import admin from './admin.js'
 const mainDiv = document.getElementById('main')
  
 const render = html => {
@@ -41,7 +42,7 @@ const controllers = {
       .then(races => races.reduce((carry, race) => carry + makeRace(race),''))
       .then(gpCard => {
         render(`
-        ${routeCalendrier}
+        ${calendrier}
         <div class="container">
             <div class="jumbotron">
               <h1 class="display-3">Calendrier</h1>
@@ -182,25 +183,7 @@ const controllers = {
     },
 
     '/admin': () => {
-      render(`
-          ${navbar}
-          <div class="container">
-          <div id="alert-login"></div>
-          </div>
-          <h2>Log In</h2>
-          <form id="logInForm">
-            <div class="form-group">
-              <label for="inputName">Username</label>
-              <input name="username" type="text" class="form-control" id="inputFirstName">
-          </div>
-          <div class="form-group">
-            <label for="inputNickname">Password</label>
-            <input name="password" type="text" class="form-control" id="inputNickname">
-          </div>
-          <button type="submit" class="btn btn-primary">Connexion</button>
-          </form>
-          <div id="test">Click me</div>
-      `)
+      render(`${admin}`)
 
       const logInForm = document.getElementById('logInForm')
       logInForm.addEventListener('submit', e => {
