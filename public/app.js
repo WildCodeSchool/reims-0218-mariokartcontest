@@ -231,8 +231,9 @@ const controllers = {
             <input name="password" type="text" class="form-control" id="inputNickname">
           </div>
           <button type="submit" class="btn btn-primary">Connexion</button>
+          <button type="button" class="btn btn-primary" id="disconnect">Déconnexion</button>
           </form>
-          <div id="test">Click me</div>
+          
       `)
 
       const logInForm = document.getElementById('logInForm')
@@ -264,14 +265,20 @@ const controllers = {
               logInForm.style.display= 'none'
             }
           });
+          window.location= '/'
+          page('/') // setting the path
+          page() // starting the redirection
       });
-      document.getElementById('test').addEventListener('click', () => {
+      document.getElementById('disconnect').addEventListener('click', () => {
         const token = localStorage.getItem('token')
         console.log(token)
         fetch('test')
         .then(res => res.json())
         .catch(err => console.log(err))
         localStorage.removeItem('token')
+        window.location= '/'
+          page('/') // setting the path
+          page() // starting the redirection
       })
     },
     
