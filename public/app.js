@@ -8,6 +8,7 @@ import information from './information.js'
 import classementRoute  from './classementroute.js';
 
 const controllers = {
+  
   '/': contestant,
 
   '/calendrier': calendrier,
