@@ -5,4 +5,5 @@ export const cleanHtml = htmlString =>htmlString
   .filter(str => str.trim())
   .join('><')
   .trim()
- 
+
+  export const tokenAdmin = () => localStorage.getItem('token')
