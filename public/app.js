@@ -257,17 +257,23 @@ const controllers = {
             const alert = document.getElementById('alert-login')
             if(!data.user) {
               //alert class danger
-              alert.innerHTML= `echec`
+              alert.innerHTML= `<div class="alert alert-danger" role="alert">
+              Incorrect password or username
+            </div>`
             } else {
               //store the token
-              alert.innerHTML= `${data.user.username} est connecté`
+              alert.innerHTML=`<div class="alert alert-success" role="alert">
+                                This is a success alert—check it out!
+                              </div>`
               localStorage.setItem('token', data.token)
               logInForm.style.display= 'none'
+              page('/', 3000) // setting the path
+              page() // starting the redirection
+              window.location= '/'
             }
           });
-          window.location= '/'
-          page('/') // setting the path
-          page() // starting the redirection
+          
+          
       });
       document.getElementById('disconnect').addEventListener('click', () => {
         const token = localStorage.getItem('token')
