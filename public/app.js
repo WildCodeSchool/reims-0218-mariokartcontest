@@ -94,7 +94,7 @@ const controllers = {
             </div>
           </div>  
           ${navbar}          
-          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#exampleModal">
             Launch demo modal
           </button> --!>
           <div class="container">
@@ -206,10 +206,11 @@ const controllers = {
           const alertBox = document.getElementById('alert-box')
           alertBox.className = 'alert alert-success'
           alertBox.innerHTML += `Course créée`
+          page('/') // setting the path
+          page() // starting the redirection
          // alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
         })
-        window.setTimeout(() =>
-        { window.location = "/"; },3000);
+        
       })
     },
 
