@@ -66,7 +66,7 @@
       <footer class="page-footer font-small blue pt-4 mt-4">
       <div class="container-fluid text-center text-md-left">
         <div class="row justify-content-center text-center">
-          <div class="col-md-4S">
+          <div class="col-md-4">
           <h5 class="text-uppercase">Suivez nous</h5>
             <ul class="list-unstyled">         
               <li>
