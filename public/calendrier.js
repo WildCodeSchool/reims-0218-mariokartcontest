@@ -30,9 +30,9 @@ ${navbar}
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 Launch demo modal
 </button> --!>
-  <div class="container">
-      <div class="jumbotron">
-        <h1 class="display-3">Calendrier</h1>
+  <div class="container ">
+      <div class="jumbotron calendrier">
+        <h1 class="display-3 titreCalendrier">Calendrier</h1>
         <p></p>
         </div>
         <div class="row">${gpCard}</div>

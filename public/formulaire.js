@@ -38,7 +38,7 @@ export const formulaire = () => {
           <label for="inputPassword">Mot de passe</label>
           <input name="motDePasse" type="password" class="form-control" id="inputPassword" placeholder="Saisissez votre mot de passe">
         </div>
-        <button type="submit" class="btn btn-primary">S'enregistrer</button>
+        <button type="submit" class="btn btn-primary buttonInscription">S'enregistrer</button>
       </form>
     </div>`)
 

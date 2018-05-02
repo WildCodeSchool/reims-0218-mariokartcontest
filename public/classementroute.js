@@ -10,7 +10,7 @@ export const classementRoute = () => {
     render(
     `${navbar}
     <div class="container">
-      <div class="jumbotron ImageClassement">
+      <div class="jumbotron ImageClassement ">
         <h1 class="display-3 titleClassement">Classement</h1>
         <p></p>
         </div>

@@ -16,7 +16,7 @@ const makeRace = race => {
         <p class="card-text">${race.date}</p>
         <ul>${lis}</ul>
         <div class"mr-3">
-        ${tokenAdmin() ? `<button type="button" class="btn btn-outline-info add-player" data-race-id="${race.id}">Ajout joueurs</button>`: ''}
+        ${tokenAdmin() ? `<button type="button" class="btn btn-outline-info add-player buttonAjoutJoueur" data-race-id="${race.id}">+</button>`: ''}
         </div>
       </div>
     </div>

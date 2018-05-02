@@ -14,7 +14,7 @@ export const newRace = () => {
       <label for="inputdate">Date de la course (YYYY-MM-DD HH:MM:SS.SSS)</label>
         <input name="date" type="text" class="form-control" id="inputFirstName" placeholder="YYYY-MM-DD HH:MM:SS.SSS">
       </div>
-      <button type="submit" class="btn btn-primary">Créer votre course</button>
+      <button type="submit" class="btn btn-primary buttonInscription">Créer votre course</button>
     </form>
   </div>
   `
