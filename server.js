@@ -47,7 +47,7 @@ const dbPromise = Promise.resolve()
 })
 .then(() => Promise.map(usersSeed, m => insertMember(m)))
 .then(() => Promise.map(racesSeed, r => insertRace(r)))
-.then(() => Promise.map(playersHasRacesSeed, pr => insertPlayerRace(pr).then(pr => console.log(`player classement ${pr.race_id}`))))
+.then(() => Promise.map(playersHasRacesSeed, pr => insertPlayerRace(pr).then(pr)))
   
 //update a position 
 const updatePosition = up => {
