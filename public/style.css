@@ -3,28 +3,58 @@
     src: url('Mario-Kart-DS.ttf')
 }
 
+* {
+    font-family: 'MarioKart';
+}
 
 .card-img-top {
     height: 18rem;
 }
 
 .card-text {
-    height: 60px
+    height: 60px;
+}
+.bgCardMember {
+    background-color: salmon;
+}
+#main {
+    background-image: linear-gradient(lightblue, lightseagreen )
 }
 
 .wallpaper{
-    background-image: url("https://www.wallpapersbrowse.com/images/xo/xosuwnq.png");
+    background-image: url("http://www.lepoint.fr/images/2018/02/01/13126408lpw-13126422-article-jpg_4967032_980x426.jpg");
     background-size: cover;
     margin-top: 20px;
-    opacity: 0.5;
     font-size:  1.5em;
-    vertical-align: text-top;
+    min-height: 480px;
+}
+.pageMembers {
+    margin-top: 0%;
+}
+.navbar  {
+    background-size: cover;
+    flood-opacity: inherit;
+    background-image: linear-gradient(45deg, lightblue, lightgreen);
+}
+.navbar-light .navbar-brand  {
+    color: rgb(2, 190, 190);
+}
 
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(2, 190, 190);
+    opacity: 2;
+    filter: none;
+}
+
+.nicknameMember {
+    text-align: center;
+    font-size: 3em;
 }
 
 .display-3{
-    color: purple;
+    color: rgb(95, 229, 247);
     text-align: center;
+    margin-top: 20px;
     font-size:  3em;
     opacity: 1;
 }
@@ -36,12 +66,58 @@
     min-height: 480px;
 }
 
-.titleClassement {
-    font-family: 'Mario-Kart-DS.ttf', sans-serif;
-}
-
 .boutonAcceuilClassement {
     margin-left: 7em;
     margin-top: 10em;
 }
+<<<<<<< HEAD
 
+=======
+.buttonInscription {
+    margin-bottom: 10px;
+    border-radius: 500px;
+    background-color: lightgreen;
+}
+.calendrier {
+    background-image: url('https://www.goombastomp.com/wp-content/uploads/2017/08/Super-Mario-Kart.jpg');
+    background-size: cover;
+    min-height: 480px;
+}
+
+.titreCalendrier {
+    font-size: 3em;
+    margin-top: -5%;
+    text-align: left;
+}
+
+.buttonAjoutJoueur {
+    font-size: 1.5em;
+    border-radius: 50%;
+}
+
+.list-unstyled li{
+    display: table-cell;
+    width:  50;
+    height: 50;
+}
+
+.list-unstyled{
+    margin: 0;
+}
+
+/*footer{
+
+   
+    
+    position:absolute;
+    
+    bottom:0 ;
+    
+    width:100%;
+    
+    padding-top:50px;
+    
+    height:150px;
+    
+    }*/
+>>>>>>> origin/develop
