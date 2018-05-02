@@ -18,7 +18,7 @@ export const navbar = `
       ${
         tokenAdmin() ?
         `<li class="nav-item">
-          
+          <a class="nav-link" href="/race/new">Créer une course</a>
         </li>`
         : ''
       }
