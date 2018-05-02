@@ -4,7 +4,7 @@ import { serializeForm } from './utils.js'
 
 export const formulaire = () => {
   render(` ${navbar}
-      <div class="container">
+      <div class="container mt-4">
         <div id="alert-box" class="hidden">
         </div>
         <h2>Inscription pour le tournoi !</h2>

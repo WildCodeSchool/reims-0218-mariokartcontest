@@ -19,7 +19,7 @@ const makeClassement = classement => {
     lis += makePlayerListClassement(player, classement.id)
   }
   return `
-  <div class="col-12 col-md-4">
+  <div class="col-12 col-md-4 mt-4">
     <div class="card mb-4 box-shadow">
       <div class="card-body">
       <p class="card-text">${classement.date}</p>

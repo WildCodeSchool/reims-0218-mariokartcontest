@@ -65,12 +65,13 @@
       <title>Mario Kart Contest</title>
       <link rel="icon" type="image" href="favicon.ico"/>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
+      <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
       <link rel="stylesheet" href="/style.css">
       </head>
     <body>
       <div id="main" class="pb-5">
       </div>
-      <footer class="container-fluid bg pt-5">
+      <footer class="container-fluid pt-5">
         
           <div class="row justify-content-center text-center">
             <div class="col-12">
@@ -81,10 +82,10 @@
             <div class="col-md-4">
               <h5 class="text-uppercase">Suivez nous</h5>
                 <div class="mt-3">     
-                  <a href="https://fr-fr.facebook.com/wildcodeschool/" target=blank ><img src="http://www.grez-doiceau.be/ma-commune/social/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" width="50" height="50" /> </a>
-                  <a href="https://twitter.com/wildschoolreims?lang=fr" target=blank ><img src="http://www.medias-catholiques.fr/images/twitter/image" width="50" height="50" /></a>
-                  <a href="https://www.linkedin.com/search/results/index/?keywords=wild%20code%20school%20reims&origin=GLOBAL_SEARCH_HEADER" target=blank ><img src="https://www.shareicon.net/data/128x128/2017/06/28/888033_logo_512x512.png" width="50" height="50" /> </a>
-                  <a href="https://www.instagram.com/wildcodeschool/?hl=fr" target=blank ><img src="http://geeko.lesoir.be/wp-content/uploads/sites/58/2016/05/insta-logo.jpg" width="50" height="50" /> </a>
+                  <a href="https://fr-fr.facebook.com/wildcodeschool/" target=blank ><i class="fab fa-facebook-square rounded-circle"></i></a>
+                  <a href="https://twitter.com/wildcodeschool" target="_blank"><i class="fab fa-twitter rounded-circle"></i></a>
+                  <a href="https://www.linkedin.com/school/wild-code-school/" target=blank ><i class="fab fa-linkedin-in rounded-circle"></i></a>
+                  <a href="https://www.instagram.com/wildcodeschool/" target="_blank"><i class="fab fa-instagram rounded-circle"></i></a>
                 </div>
               </div>
             <div class="col-md-4">
