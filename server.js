@@ -17,7 +17,7 @@
 
   const insertMember = m => {
     const { image, name, nickname, email, password, } = m
-    return db.get('INSERT INTO members(image, name, nickname, email, password) VALUES(?, ?, ?, ?, ?)', image, name, nickname, email, password)
+    return db.get('INSERT INTO members(image, name, nickname, email ) VALUES(?, ?, ?, ?)', image, name, nickname, email,)
     .then(() => db.get('SELECT last_insert_rowid() as id'))
     .then(({ id }) => db.get('SELECT * from members WHERE id = ?', id))
   }
@@ -72,34 +72,34 @@
       </div>
       <footer class="page-footer font-small blue pt-4 mt-4">
       <div class="container-fluid text-center text-md-left">
-        <div class="row justify-content-center text-center">
+        <div class="row justify-content-around text-center">
           <div class="col-md-4">
           <h5 class="text-uppercase">Suivez nous</h5>
-            <ul class="list-unstyled">         
-              <li>
-                <a href="https://fr-fr.facebook.com/wildcodeschool/" ><img src="http://www.grez-doiceau.be/ma-commune/social/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" width="50" height="50" /> </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/wildschoolreims?lang=fr" ><img src="http://www.medias-catholiques.fr/images/twitter/image" width="50" height="50" /> </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/search/results/index/?keywords=wild%20code%20school%20reims&origin=GLOBAL_SEARCH_HEADER" ><img src="https://www.shareicon.net/data/128x128/2017/06/28/888033_logo_512x512.png" width="50" height="50" /> </a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/wildcodeschool/?hl=fr" ><img src="http://geeko.lesoir.be/wp-content/uploads/sites/58/2016/05/insta-logo.jpg" width="50" height="50" /> </a>
-              </li>   
+            <div class = "mt-3">     
+              
+                <a href="https://fr-fr.facebook.com/wildcodeschool/" target=blank ><img src="http://www.grez-doiceau.be/ma-commune/social/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" width="50" height="50" /> </a>
+              
+              
+                <a href="https://twitter.com/wildschoolreims?lang=fr" target=blank ><img src="http://www.medias-catholiques.fr/images/twitter/image" width="50" height="50" /> </a>
+              
+              
+                <a href="https://www.linkedin.com/search/results/index/?keywords=wild%20code%20school%20reims&origin=GLOBAL_SEARCH_HEADER" target=blank ><img src="https://www.shareicon.net/data/128x128/2017/06/28/888033_logo_512x512.png" width="50" height="50" /> </a>
+              
+              
+                <a href="https://www.instagram.com/wildcodeschool/?hl=fr" target=blank ><img src="http://geeko.lesoir.be/wp-content/uploads/sites/58/2016/05/insta-logo.jpg" width="50" height="50" /> </a>
+            </div>
           </div>
           <div class="col-md-4">
             <h5 class="text-uppercase">Nos partenaires</h5>
-            <ul class="list-unstyled">
+            <ul class="list-group">
               <li>
-                  <a href="https://github.com/WildCodeSchool/reims-0218-worldcuppronostics">world cup pronostics</a>
+                  <a href="https://github.com/WildCodeSchool/reims-0218-worldcuppronostics" target=blank>world cup pronostics</a>
               </li>
               <li>
-                  <a href="https://github.com/WildCodeSchool/reims-0218-artezicreloaded">artezic reloaded</a>
+                  <a href="https://github.com/WildCodeSchool/reims-0218-artezicreloaded"target=blank>artezic reloaded</a>
               </li>
               <li>
-                  <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">book your wilder</a>
+                  <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder"target=blank>book your wilder</a>
               </li>
                 
             </ul>

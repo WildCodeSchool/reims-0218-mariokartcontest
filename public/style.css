@@ -94,14 +94,15 @@
     border-radius: 50%;
 }
 
-.list-unstyled li{
-    display: table-cell;
+.list-group li{
+    display:table-cell ;
     width:  50;
     height: 50;
 }
 
-.list-unstyled{
-    margin: 0;
+.ul.list-unstyled{
+    text-align: center;
+    margin-left: 10px;
 }
 
 /*footer{

@@ -34,10 +34,6 @@ export const formulaire = () => {
           <label for="inputEmail">Email</label>
           <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
         </div>
-        <div class="form-group">
-          <label for="inputPassword">Mot de passe</label>
-          <input name="motDePasse" type="password" class="form-control" id="inputPassword" placeholder="Saisissez votre mot de passe">
-        </div>
         <button type="submit" class="btn btn-primary buttonInscription">S'enregistrer</button>
       </form>
     </div>`)
