@@ -75,7 +75,7 @@
 .buttonInscription {
     margin-bottom: 10px;
     border-radius: 500px;
-    background-color: palegreen;
+    background-color: lightgreen;
 }
 .calendrier {
     background-image: url('https://www.goombastomp.com/wp-content/uploads/2017/08/Super-Mario-Kart.jpg');
@@ -85,7 +85,7 @@
 
 .titreCalendrier {
     font-size: 3em;
-    margin-top: -8%;
+    margin-top: -5%;
     text-align: left;
 }
 
@@ -93,3 +93,29 @@
     font-size: 1.5em;
     border-radius: 50%;
 }
+
+.list-unstyled li{
+    display: table-cell;
+    width:  50;
+    height: 50;
+}
+
+.list-unstyled{
+    margin: 0;
+}
+
+/*footer{
+
+   
+    
+    position:absolute;
+    
+    bottom:0 ;
+    
+    width:100%;
+    
+    padding-top:50px;
+    
+    height:150px;
+    
+    }*/

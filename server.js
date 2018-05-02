@@ -6,10 +6,14 @@
   const racesSeed = require('./public/races.json')
   const playersHasRacesSeed = require('./public/players_has_races.json') 
   const app = express()
+  require('./passport-strategy')
+  
+  const auth = require ('./auth')
   let db
 
   app.use(express.static('public'))
   app.use(bodyParser.json())
+  app.use('/auth', auth)
 
   const insertMember = m => {
     const { image, name, nickname, email, password, } = m
@@ -70,17 +74,20 @@
       <div class="container-fluid text-center text-md-left">
         <div class="row justify-content-center text-center">
           <div class="col-md-4">
-            <h5 class="text-uppercase">Reseaux sociaux</h5>
-            <ul class="list-unstyled">
+          <h5 class="text-uppercase">Suivez nous</h5>
+            <ul class="list-unstyled">         
               <li>
-                <img src="http://www.grez-doiceau.be/ma-commune/social/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" width="50" height="50" alt="" <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder" >Facebook</a>
+                <a href="https://fr-fr.facebook.com/wildcodeschool/" ><img src="http://www.grez-doiceau.be/ma-commune/social/epn/images/logo-facebook.png/@@images/e089d70f-51fe-4bc3-9fb4-50af5d51ef69.png" width="50" height="50" /> </a>
               </li>
               <li>
-                <img src="http://www.medias-catholiques.fr/images/twitter/image" width="50" height="50" alt="" <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">Twitter</a>
+                <a href="https://twitter.com/wildschoolreims?lang=fr" ><img src="http://www.medias-catholiques.fr/images/twitter/image" width="50" height="50" /> </a>
               </li>
               <li>
-                <img src="https://www.shareicon.net/data/128x128/2017/06/28/888033_logo_512x512.png" width="50" height="50" alt="" <a href="https://github.com/WildCodeSchool/reims-0218-bookyourwilder">Linkedin</a>
-              </li>         
+                <a href="https://www.linkedin.com/search/results/index/?keywords=wild%20code%20school%20reims&origin=GLOBAL_SEARCH_HEADER" ><img src="https://www.shareicon.net/data/128x128/2017/06/28/888033_logo_512x512.png" width="50" height="50" /> </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/wildcodeschool/?hl=fr" ><img src="http://geeko.lesoir.be/wp-content/uploads/sites/58/2016/05/insta-logo.jpg" width="50" height="50" /> </a>
+              </li>   
           </div>
           <div class="col-md-4">
             <h5 class="text-uppercase">Nos partenaires</h5>
@@ -107,6 +114,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="/page.js"></script>
     <script type="module"  src="/app.js"></script>
+    
     </body>
   </html>`
 
@@ -156,6 +164,7 @@
       from races
       left join players_has_races on players_has_races.race_id = races.id
       left join members on members.id = players_has_races.player_id
+      order by position 
       `
     )
     .then(records => {
@@ -180,8 +189,8 @@
           }
         } else {
           acc[race.id].players = [
-            race.player,
-            ...acc[race.id].players
+            ...acc[race.id].players,
+            race.player
           ]
         }
         return acc

@@ -1,5 +1,9 @@
 export const makeRaceList = raceList => `<li>${raceList.nickname}</li>`
 
+
+const tokenAdmin = () => localStorage.getItem('token')
+
+
 const makeRace = race => {
   let lis = '' 
   for (let player of race.players) {
@@ -12,7 +16,7 @@ const makeRace = race => {
         <p class="card-text">${race.date}</p>
         <ul>${lis}</ul>
         <div class"mr-3">
-        <button type="button" class="btn btn-outline-info add-player buttonAjoutJoueur" data-race-id="${race.id}">+</button>
+        ${tokenAdmin() ? `<button type="button" class="btn btn-outline-info add-player buttonAjoutJoueur" data-race-id="${race.id}">+</button>`: ''}
         </div>
       </div>
     </div>
