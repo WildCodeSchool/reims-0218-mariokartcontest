@@ -109,7 +109,11 @@
 .image-footer{
 height: 144px;
 width: 144px;
-margin-top: -72px;
+margin-top: -100px;
+}
+
+footer {
+    background-color: lightgrey;
 }
 
 
