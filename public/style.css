@@ -238,6 +238,10 @@ footer .rounded-circle:hover {
   to { left: 100%}
 }
   
+ul {
+    list-style: none;
+}
+
   /* Fin Du CSS de la page d'accueil */
 
 /*footer{
