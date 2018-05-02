@@ -24,4 +24,3 @@ const makeRace = race => {
 }
 
 export default makeRace
-

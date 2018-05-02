@@ -2,8 +2,6 @@ import { makeRaceList } from './race.js'
 import makeRace from './race.js'
 import { cleanHtml } from './utils.js'
 
-
-
 const race = {
   id: 1,
   date: "2018-04-12 12:00:00",

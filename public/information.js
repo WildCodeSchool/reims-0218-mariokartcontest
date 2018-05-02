@@ -2,8 +2,8 @@ import navbar from './navbar.js'
 import { render } from './utils.js'
 
 export const information = () => {
-  render(
-  `${navbar}
+  render(` 
+  ${navbar}
   <div class="container mt-4">
     <section class="jumbotron text-center">
       <h1 class="jumbotron-heading">A propos</h1>
@@ -19,7 +19,7 @@ export const information = () => {
     <div class="card mr-4">
       <img class="card-img-top img-fluid" src="https://emmanuelbouin.files.wordpress.com/2012/02/pitivier_content.jpg?w=586" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Khalid <3</h5>
+        <h5 class="card-title">Khalid</h5>
         <p>Power up preferé : Bananes</p>
         <p> Ce joueur excelle dans l'art de semer de petites bananes pour faire déraper les autres joueurs. Mefiez vous car si une trajectoire rapide est souvent prisé il y aura toujours une petite banane délicatement et amoureusement posée. </p>
       </div>
@@ -27,7 +27,7 @@ export const information = () => {
     <div class="card mr-4">
       <img class="card-img-top" src="https://img2.finalfantasyxiv.com/f/5852ad62305be28222035bf6c2e9d2a5_40d57ba713628f3f1ef5ef204b6d76d2fl0_640x873.jpg?1512791378" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">aNa</h5>
+        <h5 class="card-title">Anahita</h5>
         <p>Power up preferé : Eclairs </p>
         <p>Armée de ses fidèles éclairs, aNa n'hésitera pas à vous foudroyer pour pouvoir voler vers la premiere place. Elle restera calme et pacifiste... Tant qu'elle ne possede pas ses éclairs.</p>
       </div>
@@ -35,7 +35,7 @@ export const information = () => {
     <div class="card mr-4">
       <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB14uRAQpXXXXX.XXXXq6xXFXXXa/Play-Arts-PA-Kai-Final-Fantasy-VII-FF7-Sephiroth-Action-Figure-PVC-Statue-25cm-high-no.jpg_640x640.jpg" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Antho</h5>
+        <h5 class="card-title">Anthony</h5>
         <p>Power up preferé : Carapaces rouges </p>
         <p>Une, deux et trois carapaces rouges. Voila ce qu'il lui faut pour s'assurer la premiere place. Power up à la fois offensif et defensif, il comptera dessus pour vous regarder une fois qu'il aura franchi la ligne d'arrivé en premier.</p>
       </div>
@@ -53,4 +53,3 @@ export const information = () => {
 }
 
 export default information
-
