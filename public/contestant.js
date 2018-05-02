@@ -8,10 +8,19 @@ fetch('/members')
 .then(members => members.reduce((carry, member) => carry + makePlayer(member),''))
 .then(album => render(
   `${navbar}
-  <div class="container">
+  <div class="container mt-4">
     <div class="jumbotron wallpaper">
-      <h1 class="display-3">Welcome to Mario Kart Tournament !</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      <h1 class="display-3">Liste des participants</h1>
+    </div>
+    <div class="card text-white bg-dark mb-3 mt-4" style="max-width: 75rem;">
+      <div class="card-body">
+        <h5 class="card-title">Reglement</h5>
+        <ul>
+          <li class="card-text">Un joueur doit participer à au moins 3 courses.</li>
+          <li class="card-text">Une course sera disputée par 4 joueurs maximum.</li>
+          <li class="card-text">Un classement sera etabli comme suit : 3 points pour le premier, 2 points pour le second et 1 point pour le troisieme.</li>
+        </ul>
+      </div>
     </div>
     <div class="row">${album}</div>
   </div>

@@ -22,13 +22,11 @@
 }
 
 .wallpaper{
-    background-image: url("http://www.clique.tv/wp-content/uploads/2018/02/Mario-kart-8-deluxe.jpg");
+    background-image: url("http://www.lepoint.fr/images/2018/02/01/13126408lpw-13126422-article-jpg_4967032_980x426.jpg");
     background-size: cover;
-    margin-top: 20px;
     opacity: 1;
     font-size:  1.5em;
-    vertical-align: text-top;
-
+    min-height: 480px;
 }
 .pageMembers {
     margin-top: 0%;
@@ -66,6 +64,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 480px;
+    margin-top: 25px;
 }
 
 .boutonAcceuilClassement {
@@ -94,14 +93,39 @@
     border-radius: 50%;
 }
 
-.list-unstyled li{
-    display: table-cell;
+.list-group li{
+    display:table-cell ;
     width:  50;
     height: 50;
 }
 
-.list-unstyled{
-    margin: 0;
+.ul.list-unstyled{
+    text-align: center;
+    margin-left: 10px;
+}
+
+
+.image-footer{
+height: 144px;
+width: 144px;
+margin-top: -100px;
+}
+
+footer {
+    background-color: lightgrey;
+}
+
+footer .rounded-circle {
+    background: white;
+    color: rgb(95, 229, 247);
+    font-size: 2.5em;
+    padding: 0.3em;
+}
+
+footer .rounded-circle:hover {
+    background: rgb(95, 229, 247);
+    color: white;
+    
 }
 
 /* CSS de la page d'accueil */
