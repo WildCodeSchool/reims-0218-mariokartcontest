@@ -1,4 +1,4 @@
-export const makeRaceList = raceList => `<li>${raceList.nickname}</li>`
+export const makeRaceList = raceList => `<li><img src="${raceList.image}" alt="avatar" class="mr-3 mt-3 rounded-circle" style="width:60px;"> ${raceList.nickname}</li>`
 
 
 const tokenAdmin = () => localStorage.getItem('token')
