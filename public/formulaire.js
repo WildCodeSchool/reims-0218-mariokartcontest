@@ -4,7 +4,7 @@ import { serializeForm } from './utils.js'
 
 export const formulaire = () => {
   render(` ${navbar}
-      <div class="container">
+      <div class="container mt-4">
         <div id="alert-box" class="hidden">
         </div>
         <h2>Inscription pour le tournoi !</h2>
@@ -33,10 +33,6 @@ export const formulaire = () => {
         <div class="form-group">
           <label for="inputEmail">Email</label>
           <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
-        </div>
-        <div class="form-group">
-          <label for="inputPassword">Mot de passe</label>
-          <input name="motDePasse" type="password" class="form-control" id="inputPassword" placeholder="Saisissez votre mot de passe">
         </div>
         <button type="submit" class="btn btn-primary buttonInscription">S'enregistrer</button>
       </form>
