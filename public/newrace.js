@@ -5,7 +5,7 @@ import { serializeForm } from './utils.js'
 export const newRace = () => {
   render(`
       ${navbar}
-      <div class="container">
+      <div class="container mt-4">
         <div id="alert-box" class="hidden">
       </div>
       <h2>Création de la course</h2>

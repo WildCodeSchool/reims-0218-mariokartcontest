@@ -8,7 +8,7 @@ fetch('/members')
 .then(members => members.reduce((carry, member) => carry + makePlayer(member),''))
 .then(album => render(
   `${navbar}
-  <div class="container">
+  <div class="container mt-4">
     <div class="jumbotron wallpaper">
       <h1 class="display-3">Liste des participants</h1>
     </div>

@@ -4,7 +4,7 @@ import { render } from './utils.js'
 export const information = () => {
   render(
   `${navbar}
-  <div class="container">
+  <div class="container mt-4">
     <section class="jumbotron text-center">
       <h1 class="jumbotron-heading">A propos</h1>
       <p class="lead text-muted"> Ce site a pour vocation de pouvoir s'inscrire et disputer des tournois de Mario Kart sur Nintendo 64 entre amis. <br/>
