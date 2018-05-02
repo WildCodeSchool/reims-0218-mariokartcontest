@@ -22,12 +22,11 @@
 }
 
 .wallpaper{
-    background-image: url("http://www.clique.tv/wp-content/uploads/2018/02/Mario-kart-8-deluxe.jpg");
+    background-image: url("http://www.lepoint.fr/images/2018/02/01/13126408lpw-13126422-article-jpg_4967032_980x426.jpg");
     background-size: cover;
     opacity: 1;
     font-size:  1.5em;
-    vertical-align: text-top;
-
+    min-height: 480px;
 }
 .pageMembers {
     margin-top: 0%;
