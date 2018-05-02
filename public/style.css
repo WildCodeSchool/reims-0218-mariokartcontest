@@ -104,6 +104,118 @@
     margin: 0;
 }
 
+/* CSS de la page d'accueil */
+.homepage {
+  background-image: linear-gradient(rgb(61, 156, 245), rgba(7, 139, 36, 0.678));
+  margin-bottom: 0rem;
+}
+.lead{
+  font-size: 2rem;
+}
+.sky, .road {
+  position: relative;
+}
+
+.cloud {
+  position: absolute;
+  margin-top: -5%;
+}
+
+.cloud:nth-child(1) {
+  width: 20px;
+  right: -20%;
+  opacity: 10;
+  animation: wind 30s linear infinite reverse;
+}
+
+.cloud:nth-child(2) {
+  width: 200px;
+  right: 0;
+  opacity: 1;
+  animation: wind 30s linear infinite;
+}
+
+.road {
+  height: 100%;
+  background: dimgrey;
+  border-top: 5px solid grey;
+  border-bottom: 5px solid grey;
+}
+
+.lines {
+  position: absolute;
+  border-top: 5px dashed #fff;
+  width: 100%;
+  height: -20%;
+  bottom: 50%;
+}
+
+.toadette {
+  position: absolute;
+  bottom: 75%;
+  left: 0;
+  right: 100%;
+  animation-name: drive;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.luigi {
+  position: absolute;
+  bottom: 75%;
+  left: 0;
+  right: 100%;
+  animation-name: drive;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.drapeau {
+  margin-top: -20%;
+  position: relative;
+  margin-left: 85%;
+}
+
+.mario {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 100%;
+  animation-name: drive;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.peach {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 100%;
+  animation-name: drive;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.point {
+  width: 10px;
+  bottom: 5px;
+}
+
+@keyframes drive {
+  from { left: -30%; }
+  to { left: 100%; }
+}
+
+@keyframes wind {
+  from { left: -30%; }
+  to { left: 100%}
+}
+  
+  /* Fin Du CSS de la page d'accueil */
+
 /*footer{
 
    
