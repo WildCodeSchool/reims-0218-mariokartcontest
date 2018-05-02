@@ -8,7 +8,7 @@ export const makePlayerListClassement = (playerListClassement, raceId) => {
     <button type="button" class="btn btn-outline-info add-position" data-position="4" data-player-id="${playerListClassement.id}" data-race-id="${raceId}">4</button>
   `
 
-  return `<li>Classement de ${playerListClassement.nickname} : ${playerListClassement.position}
+  return `<li><img src="${playerListClassement.image}" alt="avatar" class="mr-3 mt-3 rounded-circle" style="width:60px;"> ${playerListClassement.nickname} : ${playerListClassement.position}
   </br> ${tokenAdmin() ? `${choosePosition}` :''}
   </li>`
 }
