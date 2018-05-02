@@ -6,10 +6,13 @@ import contestant from './contestant.js'
 import newRace from './newrace.js'
 import information from './information.js'
 import classementRoute  from './classementroute.js';
+import homepage from './homepage.js';
 
 const controllers = {
   
-  '/': contestant,
+  '/': homepage,
+
+  '/listMembers': contestant,
 
   '/calendrier': calendrier,
 
@@ -29,6 +32,7 @@ const controllers = {
 const routing = () => {
   const routes = [
     '/',
+    '/listMembers',
     '/members/new',
     '/information',
     '/race/new',

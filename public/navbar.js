@@ -10,12 +10,15 @@ export const navbar = `
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
     <li class="nav-item">
+    <a class="nav-link" href="/listMembers">Participants</a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="/members/new">S'inscrire</a>
       </li>
       ${
         tokenAdmin() ?
         `<li class="nav-item">
-          <a class="nav-link" href="/race/new">Créer une course</a>
+          
         </li>`
         : ''
       }

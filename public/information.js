@@ -4,15 +4,53 @@ import { render } from './utils.js'
 export const information = () => {
   render(
   `${navbar}
-    <div class="container mt-4">
-      <section class="jumbotron text-center">
-        <h1 class="jumbotron-heading">A propos</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-        <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
-      </section>
+  <div class="container mt-4">
+    <section class="jumbotron text-center">
+      <h1 class="jumbotron-heading">A propos</h1>
+      <p class="lead text-muted"> Ce site a pour vocation de pouvoir s'inscrire et disputer des tournois de Mario Kart sur Nintendo 64 entre amis. <br/>
+      Nous sommes une équipe de 4 personnes unis par une passion commune : celle de pouvoir participer a des courses sur le jeu Mario Kart. <br/>
+      Par l'intermédiaire de ce site nous vous proposons de participer à des tournois ponctuels et de venir vous mesurer sur ce jeu. Que vous soyez debutant ou confirmé, venez passer le temps d'une soirée un moment convivial dans une ambiance festive.   </p>
+      <h4> Quelques mots sur le jeu</h4>
+      <p>Mario Kart est sans doute le jeu de course le plus prisé des jeunes joueurs, avec ses courses endiablées, au rythme des carapaces qui volent et de la tension permanente de se voir voler la première place de la course au dernier moment. Débuté en 1992 avec Super Mario Kart sur Super Nintendo, la saga compte aujourd’hui son 8e opus, sorti en 2014 sur console Wii U.</p>
+      <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
+    </section>
+  </div>
+  <div class="card-group mx-4">
+    <div class="card mr-4">
+      <img class="card-img-top img-fluid" src="https://emmanuelbouin.files.wordpress.com/2012/02/pitivier_content.jpg?w=586" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Khalid <3</h5>
+        <p class="card-text">Power up preferé : Bananes</p>
+        <p class="card-text"> Ce joueur excelle dans l'art de semer de petites bananes pour faire déraper les autres joueurs. Mefiez vous car si une trajectoire rapide est souvent prisé il y aura toujours une petite banane délicatement et amoureusement posée. </p>
+      </div>
     </div>
-    `
+    <div class="card mr-4">
+      <img class="card-img-top" src="https://img2.finalfantasyxiv.com/f/5852ad62305be28222035bf6c2e9d2a5_40d57ba713628f3f1ef5ef204b6d76d2fl0_640x873.jpg?1512791378" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">aNa</h5>
+        <p class="card-text">Power up preferé : Eclairs </p>
+        <p class="card-text">Armée de ses fidèles éclairs, aNa n'hésitera pas à vous foudroyer pour pouvoir voler vers la premiere place. Elle restera calme et pacifiste... Tant qu'elle ne possede pas ses éclairs.</p>
+      </div>
+    </div>
+    <div class="card mr-4">
+      <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB14uRAQpXXXXX.XXXXq6xXFXXXa/Play-Arts-PA-Kai-Final-Fantasy-VII-FF7-Sephiroth-Action-Figure-PVC-Statue-25cm-high-no.jpg_640x640.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Antho</h5>
+        <p class="card-text">Power up preferé : Carapaces rouges </p>
+        <p class="card-text">Une, deux et trois carapaces rouges. Voila ce qu'il lui faut pour s'assurer la premiere place. Power up à la fois offensif et defensif, il comptera dessus pour vous regarder une fois qu'il aura franchi la ligne d'arrivé en premier.</p>
+      </div>
+    </div>
+    <div class="card mr-4">
+      <img class="card-img-top" src="https://img00.deviantart.net/c6f2/i/2008/087/f/b/foxhound_icon_by_solidalexei.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Dorian</h5>
+        <p class="card-text">power up preferé : Etoile </p>
+        <p class="card-text">Avec son etoile, ce joueur ira plus vite et sera invicible pour un temps limité. Toutefois ne vous approchez pas de lui ou vous risquez de perdre le controle. </p>
+      </div>
+    </div>
+  </div>`
   )
 }
 
 export default information
+
