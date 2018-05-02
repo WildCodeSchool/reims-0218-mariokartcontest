@@ -11,7 +11,7 @@ export const formulaire = () => {
         <form id="add-member">
           <div class="form-group">
             <label for="inputName">Prénom</label>
-            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prénom">
+            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prenom">
         </div>
         <div class="form-group">
           <label for="inputNickname">Pseudo</label>
