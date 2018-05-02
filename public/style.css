@@ -242,6 +242,13 @@ ul {
     list-style: none;
 }
 
+.card {
+    box-shadow: 1px 2px 20px rgba(0,0,0,0.5);
+}
+
+.jumbotron {
+    box-shadow: 1px 2px 20px rgba(0,0,0,0.5);
+}
   /* Fin Du CSS de la page d'accueil */
 
 /*footer{
