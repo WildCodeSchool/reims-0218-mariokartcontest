@@ -16,14 +16,16 @@
 }
 
 .bgCardMember {
-  background-color: salmon;
+  background-color: rgb(9, 139, 214);
+  color: white;
+  text-shadow: 1px 3px black;
 }
 
 #main {
   background-image: linear-gradient(lightblue, lightseagreen )
 }
 
-.wallpaper{
+.wallpaper {
   background-image: url("http://www.lepoint.fr/images/2018/02/01/13126408lpw-13126422-article-jpg_4967032_980x426.jpg");
   background-size: cover;
   opacity: 1;
@@ -56,12 +58,18 @@
   font-size: 2em;
 }
 
-.display-3{
-  color: rgb(95, 229, 247);
+.display-3 {
+  color: rgb(9, 247, 235);
   text-align: center;
-  margin-top: 20px;
+  margin-top: 15px;
   font-size:  3em;
-  opacity: 1;
+  text-shadow: 1px 5px black;
+}
+
+h5.card-title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 2em;
 }
 
 .ImageClassement {

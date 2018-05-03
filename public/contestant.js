@@ -12,7 +12,7 @@ export const contestant = () =>
       <div class="jumbotron wallpaper">
         <h1 class="display-3">Liste des participants</h1>
       </div>
-      <div class="card text-white bg-dark mb-3 mt-4" style="max-width: 75rem;">
+      <div class="card text-white bg-dark titleContestant mb-3 mt-4">
         <div class="card-body">
           <h5 class="card-title">Reglement</h5>
           <ul>
