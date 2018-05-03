@@ -2,11 +2,9 @@ import { makeRaceList } from './race.js'
 import makeRace from './race.js'
 import { cleanHtml } from './utils.js'
 
-
-
 const race = {
   id: 1,
-  date: "2018-04-12 12:00:00",
+  nameRace: "Course Champignon",
   players: [
     { 
       id: 4,
@@ -29,7 +27,7 @@ const expectedHtml = cleanHtml (`
   <div class="col-12 col-md-4">
     <div class="card mb-4 box-shadow">
       <div class="card-body">
-        <p class="card-text">2018-04-12 12:00:00</p>
+        <p class="card-text">Course Champignon</p>
         <ul>
           <li>Elmoro</li>
           <li>Marco</li>

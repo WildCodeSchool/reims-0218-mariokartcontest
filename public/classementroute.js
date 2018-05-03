@@ -8,24 +8,23 @@ export const classementRoute = () => {
   .then(races => races.reduce((carry, race) => carry + makeClassement(race),''))
   .then(gpCard => {
     render(
-    `${navbar}
-    <div class="container">
-      <div class="jumbotron ImageClassement ">
-        <h1 class="display-3 titleClassement">Classement</h1>
-        <p></p>
-        </div>
-        <div class="row">${gpCard}</div>
-    </div>
+      `${navbar}
+      <div class="container">
+        <div class="jumbotron ImageClassement ">
+          <h1 class="display-3 titleClassement">Classement</h1>
+          <p></p>
+          </div>
+          <div class="row">${gpCard}</div>
+      </div>
     `)
     // document.get...
     const buttonPositions = document.getElementsByClassName('add-position')
     for (let buttonPosition of buttonPositions) {
-      //console.log(buttonPosition)
+    //console.log(buttonPosition)
       buttonPosition.addEventListener('click', () => {
         const raceId = buttonPosition.dataset.raceId
         const playerId = buttonPosition.dataset.playerId
         const position = buttonPosition.dataset.position
-        console.log(raceId, playerId, position)
         const addPositionToData = {
           race_id: raceId,
           player_id: playerId,
@@ -38,12 +37,12 @@ export const classementRoute = () => {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(addPositionToData)
-        },
-       // window.location = "/calendrier"
-        )
-        
+        })  
+        page('/classement')
+        page()   
       })
     }
+    
   })
 }
 

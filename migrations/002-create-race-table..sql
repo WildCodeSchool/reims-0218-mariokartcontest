@@ -1,7 +1,7 @@
 -- Up
 CREATE TABLE races (
   id INTEGER PRIMARY KEY,
-  date TEXT
+  nameRace TEXT
 );
 
 CREATE TABLE players_has_races (

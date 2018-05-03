@@ -1,141 +1,147 @@
 @font-face {
-    font-family: 'MarioKart';
-    src: url('Mario-Kart-DS.ttf')
+  font-family: 'MarioKart';
+  src: url('Mario-Kart-DS.ttf')
 }
 
 * {
-    font-family: 'MarioKart';
+  font-family: 'MarioKart';
 }
 
 .card-img-top {
-    height: 18rem;
+  height: 18rem;
 }
 
 .card-text {
-    height: 60px;
+  height: 60px;
 }
+
 .bgCardMember {
-    background-color: salmon;
+  background-color: salmon;
 }
+
 #main {
-    background-image: linear-gradient(lightblue, lightseagreen )
+  background-image: linear-gradient(lightblue, lightseagreen )
 }
 
 .wallpaper{
-    background-image: url("http://www.lepoint.fr/images/2018/02/01/13126408lpw-13126422-article-jpg_4967032_980x426.jpg");
-    background-size: cover;
-    opacity: 1;
-    font-size:  1.5em;
-    min-height: 480px;
+  background-image: url("http://www.lepoint.fr/images/2018/02/01/13126408lpw-13126422-article-jpg_4967032_980x426.jpg");
+  background-size: cover;
+  opacity: 1;
+  font-size:  1.5em;
+  min-height: 480px;
 }
+
 .pageMembers {
-    margin-top: 0%;
+  margin-top: 0%;
 }
+
 .navbar  {
-    background-size: cover;
-    flood-opacity: inherit;
-    background-image: linear-gradient(45deg, lightblue, lightgreen);
+  background-size: cover;
+  flood-opacity: inherit;
+  background-image: linear-gradient(45deg, lightblue, lightgreen);
 }
+
 .navbar-light .navbar-brand  {
-    color: rgb(2, 190, 190);
+  color: rgb(2, 190, 190);
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: rgb(2, 190, 190);
-    opacity: 2;
-    filter: none;
+  color: rgb(2, 190, 190);
+  opacity: 2;
+  filter: none;
 }
 
 .nicknameMember {
-    text-align: center;
-    font-size: 2em;
+  text-align: center;
+  font-size: 2em;
 }
 
 .display-3{
-    color: rgb(95, 229, 247);
-    text-align: center;
-    margin-top: 20px;
-    font-size:  3em;
-    opacity: 1;
+  color: rgb(95, 229, 247);
+  text-align: center;
+  margin-top: 20px;
+  font-size:  3em;
+  opacity: 1;
 }
 
 .ImageClassement {
-    background-image: url("https://i.imgur.com/0u0jFMo.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 480px;
-    margin-top: 25px;
+  background-image: url("https://i.imgur.com/0u0jFMo.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 480px;
+  margin-top: 25px;
 }
 
 .boutonAcceuilClassement {
-    margin-left: 7em;
-    margin-top: 10em;
+  margin-left: 7em;
+  margin-top: 10em;
 }
 .buttonInscription {
-    margin-bottom: 10px;
-    border-radius: 500px;
-    background-color: lightgreen;
+  margin-bottom: 10px;
+  border-radius: 500px;
+  background-color: lightgreen;
 }
 .calendrier {
-    background-image: url('https://www.goombastomp.com/wp-content/uploads/2017/08/Super-Mario-Kart.jpg');
-    background-size: cover;
-    min-height: 480px;
+  background-image: url('https://www.goombastomp.com/wp-content/uploads/2017/08/Super-Mario-Kart.jpg');
+  background-size: cover;
+  min-height: 480px;
 }
 
 .titreCalendrier {
-    font-size: 3em;
-    margin-top: -5%;
-    text-align: left;
+  font-size: 3em;
+  margin-top: -5%;
+  text-align: left;
 }
 
 .buttonAjoutJoueur {
-    font-size: 1.5em;
-    border-radius: 50%;
+  font-size: 1.5em;
+  border-radius: 50%;
 }
 
-.list-group li{
-    display:table-cell ;
-    width:  50;
-    height: 50;
+.list-group li {
+  display:table-cell ;
+  width:  50;
+  height: 50;
 }
 
 .ul.list-unstyled{
-    text-align: center;
-    margin-left: 10px;
+  text-align: center;
+  margin-left: 10px;
 }
 
-
 .image-footer{
-height: 144px;
-width: 144px;
-margin-top: -100px;
+  height: 144px;
+  width: 144px;
+  margin-top: -100px;
 }
 
 footer {
-    background-color: lightgrey;
+  background-color: lightgrey;
 }
 
 footer .rounded-circle {
-    background: white;
-    color: rgb(95, 229, 247);
-    font-size: 2.5em;
-    padding: 0.3em;
+  background: white;
+  color: rgb(95, 229, 247);
+  font-size: 2.5em;
+  padding: 0.3em;
 }
 
 footer .rounded-circle:hover {
-    background: rgb(95, 229, 247);
-    color: white;
-    
+  background: rgb(95, 229, 247);
+  color: white;  
 }
 
 /* CSS de la page d'accueil */
+
 .homepage {
   background-image: linear-gradient(rgb(61, 156, 245), rgba(7, 139, 36, 0.678));
   margin-bottom: 0rem;
 }
+
 .lead{
   font-size: 2rem;
 }
+
 .sky, .road {
   position: relative;
 }
@@ -237,25 +243,25 @@ footer .rounded-circle:hover {
   from { left: -30%; }
   to { left: 100%}
 }
-  
+
+/* Fin Du CSS de la page d'accueil */
+
 ul {
-    list-style: none;
+  list-style: none;
 }
 
-  /* Fin Du CSS de la page d'accueil */
+.card {
+  box-shadow: 1px 2px 20px rgba(0,0,0,0.5);
+}
+
+.jumbotron {
+  box-shadow: 1px 2px 20px rgba(0,0,0,0.5);
+}
 
 /*footer{
-
-   
-    
-    position:absolute;
-    
-    bottom:0 ;
-    
-    width:100%;
-    
-    padding-top:50px;
-    
-    height:150px;
-    
-    }*/
+  position:absolute;
+  bottom:0 ;
+  width:100%;
+  padding-top:50px;
+  height:150px;
+}*/
