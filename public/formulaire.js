@@ -10,13 +10,13 @@ export const formulaire = () => {
         <form id="add-member">
           <div class="form-group">
             <label for="inputName">Prénom</label>
-            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prénom">
+            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prenom">
           </div>
           <div class="form-group">
             <label for="inputNickname">Pseudo</label>
             <input name="nickname" type="text" class="form-control" id="inputNickname" placeholder="Entrez votre pseudo">
           </div>
-          <p>Choisissez votre équipe</br></p>
+          <p>Choisissez votre equipe</br></p>
           <div class="form-check form-check-inline">
             <input class="form-check-input form-control"  type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
             <label class="form-check-label" for="inlineRadio1">TEAM WILD</label>

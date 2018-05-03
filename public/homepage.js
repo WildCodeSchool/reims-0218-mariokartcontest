@@ -23,8 +23,8 @@ export const homepage = () => {
           <p class="lead mb-0 pb-0">Tu fais partis de la Capsule?</p>
           <p class="lead mb-0 pb-0">Tu connais Mario Kart 64?</p>
           <p class="lead mb-0 pb-0">Et en plus, tu te prends pour le meilleur??</p>
-          <p class="lead mb-0 pb-0">Alors inscris toi à notre tournoi Mario Kart organisé par la Wild Code School et viens défier nos Champions!</p>
-          <a role"button" href="/listMembers" class="btn btn-primary btn-lg btn-block">Je relève le défi</a>
+          <p class="lead mb-0 pb-0">Alors inscris toi au tournoi Mario Kart de la Wild Code School et viens jouer face a nos Champions!</p>
+          <a role"button" href="/listMembers" class="btn btn-primary btn-lg btn-block">J'accepte le challenge</a>
         </div>
       </div>
     </div>
