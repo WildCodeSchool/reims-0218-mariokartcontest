@@ -50,7 +50,7 @@ export const calendrier = () =>
           .then(members => {
             let liste = ""
             for (let member of members) {
-              liste += `<li class="select-player" data-member-id="${member.id}">${member.name}</li>`
+              liste += `<li class="select-player" data-member-id="${member.id}">${member.nickname} (${member.name})</li>`
             }
           const addPlayerModal = document.getElementById('add-player-modal')
           addPlayerModal.innerHTML = `<ul>${liste}</ul>`
