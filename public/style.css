@@ -70,7 +70,11 @@
 h5.card-title {
   font-size: 2em;
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 5em;
+}
+
+.rules {
+  margin-bottom: -20px;
 }
 
 .ImageClassement {
