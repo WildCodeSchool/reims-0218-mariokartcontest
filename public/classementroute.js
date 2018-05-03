@@ -37,9 +37,12 @@ export const classementRoute = () => {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(addPositionToData)
-        })     
+        })  
+        page('/classement')
+        page()   
       })
     }
+    
   })
 }
 

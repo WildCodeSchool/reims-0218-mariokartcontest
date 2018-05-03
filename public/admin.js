@@ -46,9 +46,10 @@ export const admin = () => {
           //store the token
           alert.innerHTML=`<div class="alert alert-success" role="alert">Vous etes connecté. Have a nice day !!!</div>`
           localStorage.setItem('token', data.token)
-          logInForm.style.display= 'none'  
-          page('/', 300) // setting the path
-          window.location= '/'         
+          logInForm.style.display= 'none'
+          page('/listMembers')
+          page()
+          
         }
       });   
   });
@@ -58,8 +59,7 @@ export const admin = () => {
     .then(res => res.json())
     .catch(err => console.log(err))
     localStorage.removeItem('token')
-    window.location= '/'
-      page('/') // setting the path
+      page('/listMembers') // setting the path
       page() // starting the redirection
   })
 }

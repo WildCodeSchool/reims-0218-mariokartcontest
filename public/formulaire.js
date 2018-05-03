@@ -57,9 +57,12 @@ export const formulaire = () => {
             alertBox.innerHTML += `${members.name} est inscrit`
             alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
           })
-          window.setTimeout(() =>
-          { window.location = "/"; },3000);
-      })
+     
+      page('/listMembers')
+      page()
+    })
     }
+  
+    
 
 export default formulaire

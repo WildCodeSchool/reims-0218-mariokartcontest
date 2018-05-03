@@ -38,10 +38,9 @@ export const newRace = () => {
         alertBox.className = 'alert alert-success'
         alertBox.innerHTML += `Course creee`
       // alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
-      })
-      window.setTimeout(() =>
-      { window.location = "/"; },3000);
+     
     })
+  })
 }
 
 export default newRace
