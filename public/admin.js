@@ -47,8 +47,9 @@ export const admin = () => {
           alert.innerHTML=`<div class="alert alert-success" role="alert">Vous etes connecte. Have a nice day !!!</div>`
           localStorage.setItem('token', data.token)
           logInForm.style.display= 'none'
-          page('/listMembers')
-          page()
+
+          window.location = '/listMembers'
+         
           
         }
       });   
@@ -59,8 +60,7 @@ export const admin = () => {
     .then(res => res.json())
     .catch(err => console.log(err))
     localStorage.removeItem('token')
-      page('/listMembers') // setting the path
-      page() // starting the redirection
+    window.location = '/listMembers'
   })
 }
 

@@ -28,5 +28,5 @@ const makeClassement = classement => {
     </div>
   </div>`
 }
-
+org:WildCodeSchool 
 export default makeClassement

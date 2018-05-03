@@ -17,7 +17,7 @@ export const navbar = `
         </li>
         ${tokenAdmin() ?
           `<li class="nav-item">
-            <a class="nav-link" href="/race/new">Créer une course</a>
+            <a class="nav-link" href="/race/new">Creer une course</a>
           </li>`
           : ''}
         <li class="nav-item">
