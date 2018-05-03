@@ -23,10 +23,10 @@ const insertMember = m => {
 }
 
 
-//date format YYYY-MM-DD HH:MM:SS.SSS
+//date format text
 const insertRace = r => {
-  const { date } = r
-  return db.get('INSERT INTO races(date) VALUES(?)', date)
+  const { nameRace } = r
+  return db.get('INSERT INTO races(nameRace) VALUES(?)', nameRace)
   .then(() => db.get('SELECT last_insert_rowid() as id'))
   .then(({ id }) => db.get('SELECT * from races WHERE id = ?', id))
 }
@@ -148,7 +148,7 @@ app.post('/addPlayerToRace', (req, res) => {
 
 app.get('/courses', (req, res) => {
   db.all(
-    `SELECT races.id as race_id, races.date, members.id as player_id, position, name, nickname, image
+    `SELECT races.id as race_id, races.nameRace, members.id as player_id, position, name, nickname, image
     from races
     left join players_has_races on players_has_races.race_id = races.id
     left join members on members.id = players_has_races.player_id
@@ -158,7 +158,7 @@ app.get('/courses', (req, res) => {
     const racesPlayers = records.map(
       race => ({
         id: race.race_id,
-        date: race.date,
+        nameRace: race.nameRace,
         player: {
           id: race.player_id,
           name: race.name,
@@ -171,7 +171,7 @@ app.get('/courses', (req, res) => {
       if (!acc[race.id]) {
         acc[race.id] = {
           id: race.id,
-          date: race.date,
+          nameRace: race.nameRace,
           players: race.player.id ? [race.player] : []
         }
       } else {

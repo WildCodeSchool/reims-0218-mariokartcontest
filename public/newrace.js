@@ -11,8 +11,8 @@ export const newRace = () => {
     <h2>Création de la course</h2>
       <form id="add-race">
         <div class="form-group">
-          <label for="inputdate">Date de la course (YYYY-MM-DD HH:MM:SS.SSS)</label>
-          <input name="date" type="text" class="form-control" id="inputFirstName" placeholder="YYYY-MM-DD HH:MM:SS.SSS">
+          <label for="inputdate">Nom de la course</label>
+          <input name="date" type="text" class="form-control" id="inputFirstName" placeholder="Nom de la course">
         </div>
         <button type="submit" class="btn btn-primary buttonInscription">Créer votre course</button>
       </form>
