@@ -10,11 +10,11 @@ export const formulaire = () => {
         <form id="add-member">
           <div class="form-group">
             <label for="inputName">Prenom</label>
-            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prenom">
+            <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prenom" required />
           </div>
           <div class="form-group">
             <label for="inputNickname">Pseudo</label>
-            <input name="nickname" type="text" class="form-control" id="inputNickname" placeholder="Entrez votre pseudo">
+            <input name="nickname" type="text" class="form-control" id="inputNickname" placeholder="Entrez votre pseudo" required />
           </div>
           <p>Choisissez votre equipe</br></p>
           <div class="form-check form-check-inline">
@@ -27,11 +27,11 @@ export const formulaire = () => {
           </div>
           <div class="form-group">
             <label for="inputImageUrl">Image URL</label>
-            <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL">
+            <input name="image" type="text" class="form-control" id="inputImageUrl" placeholder="Enter image URL" required />
           </div>
           <div class="form-group">
             <label for="inputEmail">Email</label>
-            <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email">
+            <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Saisissez votre email" required />
           </div>
           <button type="submit" class="btn btn-primary buttonInscription">S'enregistrer</button>
         </form>
