@@ -12,7 +12,7 @@ const makeRace = race => {
   return `
   <div class="col-12 col-md-4">
     <div class="card mb-4 box-shadow">
-      <div class="card-body">
+      <div class="card-body color">
         <p class="card-text name">${race.nameRace}</p>
         <ul>${lis}</ul>
         <div class"mr-3">

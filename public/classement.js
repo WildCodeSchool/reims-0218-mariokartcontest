@@ -21,7 +21,7 @@ const makeClassement = classement => {
   return `
   <div class="col-12 col-md-4 mt-4">
     <div class="card mb-4 box-shadow">
-      <div class="card-body">
+      <div class="card-body color">
       <p class="card-text name">${classement.nameRace}</p>
       <ul>${lis}</ul>
       </div>
