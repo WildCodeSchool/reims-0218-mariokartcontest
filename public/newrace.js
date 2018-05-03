@@ -39,8 +39,6 @@ export const newRace = () => {
       alertBox.innerHTML += `Course créée`
      // alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
     })
-    window.setTimeout(() =>
-    { window.location = "/"; },3000);
   })
 }
 

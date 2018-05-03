@@ -53,9 +53,8 @@ export const admin =
                           </div>`
           localStorage.setItem('token', data.token)
           logInForm.style.display= 'none'
-          
-          page('/', 300) // setting the path
-          window.location= '/'
+          page('/listMembers')
+          page()
           
         }
       });
@@ -69,8 +68,7 @@ export const admin =
     .then(res => res.json())
     .catch(err => console.log(err))
     localStorage.removeItem('token')
-    window.location= '/'
-      page('/') // setting the path
+      page('/listMembers') // setting the path
       page() // starting the redirection
   })
 
