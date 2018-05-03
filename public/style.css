@@ -101,6 +101,12 @@ h5.card-title {
   text-align: left;
 }
 
+.titleClassement {
+  font-size: 3em;
+  margin-top: -5%;
+  text-align: left;
+}
+
 .buttonAjoutJoueur {
   font-size: 1.5em;
   border-radius: 50%;
@@ -278,7 +284,7 @@ ul {
   width: 60px;
 }
 
-.card-text.date{
+.card-text.name{
   font-size: 1.5em;
 }
 
