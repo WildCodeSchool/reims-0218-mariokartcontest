@@ -44,7 +44,7 @@ export const admin = () => {
           alert.innerHTML=`<div class="alert alert-danger" role="alert">Incorrect password or username</div>`
         } else {
           //store the token
-          alert.innerHTML=`<div class="alert alert-success" role="alert">Vous etes connecté. Have a nice day !!!</div>`
+          alert.innerHTML=`<div class="alert alert-success" role="alert">Vous etes connecte. Have a nice day !!!</div>`
           localStorage.setItem('token', data.token)
           logInForm.style.display= 'none'
           page('/listMembers')

@@ -55,7 +55,7 @@ export const formulaire = () => {
           const alertBox = document.getElementById('alert-box')
             alertBox.className = 'alert alert-success'
             alertBox.innerHTML += `${members.name} est inscrit`
-            alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
+            alertBox.innerHTML += `\n Vous allez etre rediriges vers la page d'accueil`
           })
      
       page('/listMembers')
