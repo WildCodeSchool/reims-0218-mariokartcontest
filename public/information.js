@@ -12,7 +12,6 @@ export const information = () => {
       Par l'intermediaire de ce site nous vous proposons de participer a des tournois ponctuels et de venir vous mesurer sur ce jeu. Que vous soyez debutant ou expert, venez passer le temps d'une soiree un moment convivial dans une ambiance festive.</p>
       <h4> Quelques mots sur le jeu</h4>
       <p>Mario Kart est sans doute le jeu de course le plus connu des jeunes joueurs, avec ses courses folles, au rythme des carapaces qui volent et de la tension permanente de se voir voler la premiere place de la course au dernier moment. Debut de l'histoire en 1992 avec Super Mario Kart sur Super Nintendo, la saga compte aujourd’hui son 8e opus, sorti en 2014 sur console Wii U.</p>
-      <a class="btn btn-primary btn-lg" href="/" role="button">Accueil»</a>
     </section>
   </div>
   <div class="card-group mx-4 mb-3">
