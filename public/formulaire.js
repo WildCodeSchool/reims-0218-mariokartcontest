@@ -9,7 +9,7 @@ export const formulaire = () => {
         <h2>Inscription pour le tournoi !</h2>
         <form id="add-member">
           <div class="form-group">
-            <label for="inputName">Prénom</label>
+            <label for="inputName">Prenom</label>
             <input name="name" type="text" class="form-control" id="inputFirstName" placeholder="Entrez votre prenom">
           </div>
           <div class="form-group">
