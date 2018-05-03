@@ -1,4 +1,4 @@
-export const makeRaceList = raceList => `<li><img src="${raceList.image}" alt="avatar" class="mr-3 mt-3 rounded-circle" style="width:60px;"> ${raceList.nickname}</li>`
+export const makeRaceList = raceList => `<li><img src="${raceList.image}" alt="avatar" class="mr-3 mt-3 avatar rounded-circle"> ${raceList.nickname}</li>`
 
 
 const tokenAdmin = () => localStorage.getItem('token')
@@ -13,7 +13,7 @@ const makeRace = race => {
   <div class="col-12 col-md-4">
     <div class="card mb-4 box-shadow">
       <div class="card-body">
-        <p class="card-text">${race.nameRace}</p>
+        <p class="card-text date">${race.nameRace}</p>
         <ul>${lis}</ul>
         <div class"mr-3">
         ${tokenAdmin() ? `<button type="button" class="btn btn-outline-info add-player buttonAjoutJoueur" data-race-id="${race.id}">+</button>`: ''}

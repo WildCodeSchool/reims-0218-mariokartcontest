@@ -274,6 +274,14 @@ ul {
   box-shadow: 1px 2px 50px rgba(3, 248, 36, 0.959);
 }
 
+.avatar.rounded-circle {
+  width: 60px;
+}
+
+.card-text.date{
+  font-size: 1.5em;
+}
+
 /*footer{
   position:absolute;
   bottom:0 ;
