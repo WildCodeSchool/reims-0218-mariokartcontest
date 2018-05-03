@@ -11,8 +11,8 @@ export const newRace = () => {
     <h2>Création de la course</h2>
       <form id="add-race">
         <div class="form-group">
-          <label for="inputdate">Nom de la course</label>
-          <input name="date" type="text" class="form-control" id="inputFirstName" placeholder="Nom de la course">
+          <label for="inputNameRace">Nom de la course</label>
+          <input name="nameRace" type="text" class="form-control" id="inputNameRace" placeholder="Nom de la course">
         </div>
         <button type="submit" class="btn btn-primary buttonInscription">Créer votre course</button>
       </form>
@@ -36,7 +36,7 @@ export const newRace = () => {
       .then(races => {
         const alertBox = document.getElementById('alert-box')
         alertBox.className = 'alert alert-success'
-        alertBox.innerHTML += `Course créée`
+        alertBox.innerHTML += `Course creee`
       // alertBox.innerHTML += `\n Vous allez être redirigés vers la page d'acceuil`
       })
       window.setTimeout(() =>
