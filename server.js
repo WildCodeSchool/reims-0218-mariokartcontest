@@ -96,7 +96,12 @@ const html = `
             </ul>
         </div>
         <div class="col-12">
-          <div class="footer-copyright py-3 text-center">© 2018 Copyright:<a href="https://wildcodeschool.fr/"> Wild Code School </a></div>   
+          <div class="footer-copyright py-3 text-center">© 2018 Copyright:
+            <a href="https://www.linkedin.com/in/anahita-vahdani-39736215a/"target=blank>Anahita - </a>
+            <a href="https://www.linkedin.com/in/anthony-fischer-62436115a/"target=blank>Anthony - </a>
+            <a href="https://www.linkedin.com/in/dorian-massot-10b839151/"target=blank>Dorian - </a>
+            <a href="https://www.linkedin.com/in/khalid-el-idrissi-a9a36115a/"target=blank>Khalid</a>
+          </div>   
         </div>
       </div>
     </footer>

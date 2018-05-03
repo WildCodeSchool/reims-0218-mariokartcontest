@@ -70,7 +70,7 @@
 h5.card-title {
   font-size: 2em;
   text-align: center;
-  margin-bottom: 5em;
+ 
 }
 
 .rules {
@@ -299,6 +299,10 @@ ul {
 
 .card-text.name{
   font-size: 1.5em;
+}
+
+.admin {
+  margin-bottom: 10px;
 }
 
 /*footer{
